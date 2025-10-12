@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MND - Mens store</title>
+    <link rel="stylesheet" href="preloaderStyle.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" herf="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <style>
+   
+
+.testimonal__card {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    height:fit-content;
+    align-content: center;
+    align-items: center;
+}
+
+.testimonal__card:hover {
+            transform: translateY(-10px);
+            background-color: #f7f7f7;
+            box-shadow: 0 0 20px rgba(255, 216, 42, 0.5), 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+
+/* Testimonial Title */
+.testimonal__title {  
+    font-size: 1.2rem; 
+    margin-top: 1rem;
+}
+
+/* Testimonial Description */
+.testimonal__description {
+   
+    font-size: 1.2rem;
+    padding: 0.75rem 1rem;
+}
+
+
+.testimonal__swiper {
+    display: flex;
+    justify-content: center;
+}
+
+/* Cards Wrapper */
+.cards {
+   margin:  10px 0;
+    
+    justify-content: center;
+    padding: 1rem;
+}
+.my2{
+background-color: black;
+color: white;
+padding:5px 0px ;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.cards {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+        }
+/* Scroll Progress Bar*/
+#progress-container {
+  position: fixed ;
+  top: 1px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  z-index: 99990;
+  /* background: #f3f3f3; */
+}
+
+#progress-bar {
+  position: fixed;
+  top: 0.3px;
+  left: 0;
+  width: 0%;
+  height: 6px;
+  width: 0;
+  background: linear-gradient(90deg, rgba(27, 27, 27, 0.762) 0%, rgb(61, 61, 61) 50%, rgba(38, 38, 38, 0.679) 100%);
+  box-shadow: 0 0 4px rgba(255, 244, 221, 0.7), 0 0 10px rgba(255, 255, 255, 0.496);
+  transition: width 0.09s ease-in-out;
+  /* border-radius: 10px; */
+}
+
+.button-container:hover{
+    background-color: #333;
+    color: #fff; 
+    border-color: #fff; 
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+ }
+
+     .fa-star{
+             /* margin-top: 12px; */
+             /* margin: 12px; */
+        }
+        .star{
+           margin: 10px;
+        }
+        .checked{
+            color: orange;
+        }
+    
+    
+    
+    </style>
+
+
+      </style>
+      
+ 
+      
+</head>
+<body>
+       <!-- preloader -->
+  <div id="preloader">
+    <div class="wrapper">
+        <div class="box-wrap">
+            <div class="box one"></div>
+            <div class="box two"></div>
+            <div class="box three"></div>
+            <div class="box four"></div>
+            <div class="box five"></div>
+            <div class="box six"></div>
+        </div>
+    </div>
+</div>
+<div id="progress-container">
+    <div id="progress-bar"></div>
+  </div>
+    <!-- header section  -->
+    <header class="header" id="header">
+          <div class="logo">
+            <a href="/"> <img src="images/logolight.png" alt="Logo" srcset=""> </a>
+            <i class="fa-solid fa-bars menu" id="menu"></i>
+        </div>
+
+        <nav class="navigation">
+            <div class="pro-tabs-container">
+                    <ul id="pro-tabs" class="nav-links" >
+                        <li class="nav-link border">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="nav-link border">
+                            <a href="#Topwear">Topwear</a>
+                        </li>
+                        <li class="nav-link border">
+                            <a href="#Bottomwear">Bottomwear</a>
+                        </li>
+                        <li class="nav-link border">
+                            <a href="#Footwear">Footwear</a>
+                        </li>
+                        <li class="nav-link border" style="margin-left: 15px;">
+                            <a href="contact.html">Contact Us</a>
+                        </li> 
+                    </ul>
+            </div>
+        </nav>
+
+        <nav class="utils">
+            <ul class="nav-links">
+                <li class="nav-link">
+                    
+                    <i class="fa-solid fa-cart-shopping" id="cart-icon"></i>
+                </li>
+                <li class="nav-link">
+                    <a href="login-sginup.html">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </li>
+                    <li class="nav-link">
+                        <button id="lang-toggle" style="background: none; border: none; color: white; font-size: 16px; cursor: pointer;">EN</button>
+                    </li>
+            </ul>
+        </nav>
+    </header>
+     <main>
+        <div class="container">
+            <div class="slider">
+                <a href="#Bottomwear"><img src="img/men/men0.jpg" alt="" height="500px" width="100%vw"></a>      
+            </div>
+            <!-- Thay thế 8 sản phẩm Topwear bằng ảnh men1-men8, mô tả tiếng Việt, giá VNĐ -->
+<!-- 8 sản phẩm Topwear với giá và mô tả tách riêng -->
+<h2 class="my2" id="Topwear" data-en="Topwear" data-vi="Trang phục trên">Topwear</h2>
+<div class="cards">
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men1.jpg" height="307" alt="Áo sơ mi nam trắng cổ điển, chất liệu cotton thoáng mát." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Classic White Men's Shirt" data-vi="Áo sơ mi nam trắng cổ điển">Classic White Men's Shirt</h2>
+                <div class="testimonal__price">Giá: 420.000đ</div>
+                <div class="testimonal__description" data-vi="Áo sơ mi trắng, chất liệu cotton cao cấp, kiểu dáng lịch lãm, phù hợp đi làm hoặc dự tiệc.">White shirt, high-quality cotton fabric, elegant design, suitable for office or parties.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Áo sơ mi nam trắng cổ điển', 420, 'img/men/men1.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men2.jpg" height="307" alt="Áo polo nam xanh navy, cổ bẻ, chất liệu cotton mềm mại." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Navy Blue Men's Polo Shirt" data-vi="Áo polo nam xanh navy">Navy Blue Men's Polo Shirt</h2>
+                <div class="testimonal__price">Giá: 350.000đ</div>
+                <div class="testimonal__description" data-vi="Áo polo cổ bẻ, màu xanh navy sang trọng, chất liệu cotton co giãn, thoải mái vận động.">Polo shirt with collar, elegant navy blue color, stretch cotton fabric, comfortable for movement.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Áo polo nam xanh navy', 350, 'img/men/men2.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men3.jpg" height="307" alt="Áo len nam xám, kiểu dáng trẻ trung, giữ ấm tốt." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Youthful Gray Men's Sweater" data-vi="Áo len nam xám trẻ trung">Youthful Gray Men's Sweater</h2>
+                <div class="testimonal__price">Giá: 590.000đ</div>
+                <div class="testimonal__description" data-vi="Áo len màu xám, thiết kế hiện đại, giữ ấm tốt, phù hợp thời tiết se lạnh.">Gray sweater, modern design, good warmth retention, suitable for cool weather.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Áo len nam xám trẻ trung', 590, 'img/men/men3.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men4.jpg" height="307" alt="Áo hoodie nam xanh đen, chất liệu nỉ dày dặn, giữ ấm tốt." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Black Blue Men's Hoodie" data-vi="Áo hoodie nam xanh đen">Black Blue Men's Hoodie</h2>
+                <div class="testimonal__price">Giá: 320.000đ</div>
+                <div class="testimonal__description" data-vi="Áo hoodie màu xanh đen, chất liệu nỉ cao cấp, phù hợp mặc mùa đông hoặc đi chơi.">Black blue hoodie, high-quality fleece fabric, suitable for winter or outings.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Áo hoodie nam xanh đen', 320, 'img/men/men4.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men5.jpg" height="307" alt="Áo vest nam xám, phong cách hiện đại, lịch lãm." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Modern Gray Men's Vest" data-vi="Áo vest nam xám hiện đại">Modern Gray Men's Vest</h2>
+                <div class="testimonal__price">Giá: 1.200.000đ</div>
+                <div class="testimonal__description" data-vi="Áo vest xám, kiểu dáng trẻ trung, phù hợp dự tiệc hoặc công sở.">Gray vest, youthful style, suitable for parties or office.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Áo vest nam xám hiện đại', 1200, 'img/men/men5.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men6.jpg" height="307" alt="Áo hoodie nam trắng, chất liệu nỉ, kiểu dáng năng động." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Dynamic White Men's Hoodie" data-vi="Áo hoodie nam trắng năng động">Dynamic White Men's Hoodie</h2>
+                <div class="testimonal__price">Giá: 350.000đ</div>
+                <div class="testimonal__description" data-vi="Áo hoodie trắng, chất liệu nỉ dày dặn, phù hợp mặc đi chơi, dạo phố.">White hoodie, thick fleece fabric, suitable for outings, strolling.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Áo hoodie nam trắng năng động', 350, 'img/men/men6.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men7.jpg" height="307" alt="Áo blazer nam đen, phong cách thời thượng." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Trendy Black Men's Blazer" data-vi="Áo blazer nam đen thời thượng">Trendy Black Men's Blazer</h2>
+                <div class="testimonal__price">Giá: 950.000đ</div>
+                <div class="testimonal__description" data-vi="Áo blazer đen, kiểu dáng hiện đại, phù hợp đi làm hoặc dự tiệc.">Black blazer, modern style, suitable for work or parties.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Áo blazer nam đen thời thượng', 950, 'img/men/men7.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men8.jpg" height="307" alt="Áo khoác nam be, kiểu dáng trẻ trung, năng động." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Youthful Beige Men's Jacket" data-vi="Áo khoác nam be trẻ trung">Youthful Beige Men's Jacket</h2>
+                <div class="testimonal__price">Giá: 480.000đ</div>
+                <div class="testimonal__description" data-vi="Áo khoác màu be, chất liệu nhẹ, phù hợp mặc mùa thu hoặc đi chơi.">Beige jacket, light fabric, suitable for autumn or outings.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Áo khoác nam be trẻ trung', 480, 'img/men/men8.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+</div>
+<h2 class="my2" id="Bottomwear" data-en="Bottomwear" data-vi="Trang phục dưới">Bottomwear</h2>
+<div class="cards">
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men9.jpg" height="307" alt="Quần tây nam xám, kiểu dáng công sở, chất liệu vải cao cấp." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Gray Men's Formal Pants" data-vi="Quần tây nam xám công sở">Gray Men's Formal Pants</h2>
+                <div class="testimonal__price">Giá: 480.000đ</div>
+                <div class="testimonal__description" data-vi="Quần tây màu xám, chất liệu vải cao cấp, kiểu dáng lịch sự, phù hợp đi làm hoặc dự tiệc.">Gray formal pants, high-quality fabric, polite style, suitable for work or parties.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Quần tây nam xám công sở', 480, 'img/men/men9.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men10.jpg" height="307" alt="Quần jeans nam xanh đậm, kiểu dáng trẻ trung, năng động." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Dark Blue Men's Jeans" data-vi="Quần jeans nam xanh đậm">Dark Blue Men's Jeans</h2>
+                <div class="testimonal__price">Giá: 520.000đ</div>
+                <div class="testimonal__description" data-vi="Quần jeans xanh đậm, chất liệu denim bền đẹp, phù hợp mặc đi chơi, dạo phố.">Dark blue jeans, durable denim fabric, suitable for outings, strolling.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Quần jeans nam xanh đậm', 520, 'img/men/men10.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men11.jpg" height="307" alt="Quần kaki nam màu be, kiểu dáng trẻ trung, lịch sự." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Beige Men's Khaki Pants" data-vi="Quần kaki nam màu be">Beige Men's Khaki Pants</h2>
+                <div class="testimonal__price">Giá: 430.000đ</div>
+                <div class="testimonal__description" data-vi="Quần kaki màu be, chất liệu mềm mại, kiểu dáng trẻ trung, dễ phối đồ.">Beige khaki pants, soft fabric, youthful style, easy to match.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Quần kaki nam màu be', 430, 'img/men/men11.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men12.jpg" height="307" alt="Quần da nam đen, phong cách cá tính, nổi bật." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Stylish Black Men's Leather Pants" data-vi="Quần da nam đen cá tính">Stylish Black Men's Leather Pants</h2>
+                <div class="testimonal__price">Giá: 650.000đ</div>
+                <div class="testimonal__description" data-vi="Quần da màu đen, kiểu dáng cá tính, phù hợp phong cách thời trang nổi bật.">Black leather pants, stylish design, suitable for outstanding fashion style.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Quần da nam đen cá tính', 650, 'img/men/men12.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men13.jpg" height="307" alt="Quần linen nam trắng, kiểu dáng rộng rãi, thoáng mát." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Cool White Men's Linen Pants" data-vi="Quần linen nam trắng thoáng mát">Cool White Men's Linen Pants</h2>
+                <div class="testimonal__price">Giá: 390.000đ</div>
+                <div class="testimonal__description" data-vi="Quần linen màu trắng, chất liệu nhẹ, thoáng mát, phù hợp mặc mùa hè.">White linen pants, light fabric, cool, suitable for summer.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Quần linen nam trắng thoáng mát', 390, 'img/men/men13.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men14.jpg" height="307" alt="Quần tây nam đen, kiểu dáng công sở, lịch lãm." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Elegant Black Men's Formal Pants" data-vi="Quần tây nam đen lịch lãm">Elegant Black Men's Formal Pants</h2>
+                <div class="testimonal__price">Giá: 510.000đ</div>
+                <div class="testimonal__description" data-vi="Quần tây màu đen, chất liệu vải cao cấp, kiểu dáng công sở, lịch lãm.">Black formal pants, high-quality fabric, office style, elegant.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Quần tây nam đen lịch lãm', 510, 'img/men/men14.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men15.jpg" height="307" alt="Quần tây nam xám sáng, kiểu dáng trẻ trung, công sở." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Youthful Light Gray Men's Formal Pants" data-vi="Quần tây nam xám sáng trẻ trung">Youthful Light Gray Men's Formal Pants</h2>
+                <div class="testimonal__price">Giá: 470.000đ</div>
+                <div class="testimonal__description" data-vi="Quần tây màu xám sáng, kiểu dáng trẻ trung, phù hợp mặc đi làm hoặc dự tiệc.">Light gray formal pants, youthful style, suitable for work or parties.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Quần tây nam xám sáng trẻ trung', 470, 'img/men/men15.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men16.jpg" height="307" alt="Quần short nam kaki, kiểu dáng năng động, trẻ trung." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Dynamic Khaki Men's Shorts" data-vi="Quần short nam kaki năng động">Dynamic Khaki Men's Shorts</h2>
+                <div class="testimonal__price">Giá: 350.000đ</div>
+                <div class="testimonal__description" data-vi="Quần short kaki màu be, kiểu dáng năng động, phù hợp mặc đi chơi, dạo phố.">Beige khaki shorts, dynamic style, suitable for outings, strolling.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Quần short nam kaki năng động', 350, 'img/men/men16.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+</div>
+                
+<h2 class="my2" id="Footwear" data-en="Footwear" data-vi="Giày dép">Footwear</h2>
+<div class="cards">
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men17.jpg" height="307" alt="Giày tây nam da nâu, kiểu dáng lịch lãm, sang trọng." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Elegant Brown Leather Men's Shoes" data-vi="Giày tây nam da nâu lịch lãm">Elegant Brown Leather Men's Shoes</h2>
+                <div class="testimonal__price">Giá: 850.000đ</div>
+                <div class="testimonal__description" data-vi="Giày tây da nâu, thiết kế cổ điển, phù hợp đi làm, dự tiệc hoặc gặp đối tác.">Brown leather formal shoes, classic design, suitable for work, parties or meetings.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Giày tây nam da nâu lịch lãm', 850, 'img/men/men17.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men18.jpg" height="307" alt="Giày sneaker nam trắng, kiểu dáng trẻ trung, năng động." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Dynamic White Men's Sneakers" data-vi="Giày sneaker nam trắng năng động">Dynamic White Men's Sneakers</h2>
+                <div class="testimonal__price">Giá: 690.000đ</div>
+                <div class="testimonal__description" data-vi="Giày sneaker màu trắng, chất liệu nhẹ, dễ phối đồ, phù hợp đi chơi, dạo phố.">White sneakers, light material, easy to match, suitable for outings, strolling.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Giày sneaker nam trắng năng động', 690, 'img/men/men18.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men19.jpg" height="307" alt="Giày lười nam da nâu, kiểu dáng thanh lịch, dễ mang." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Elegant Brown Leather Men's Loafers" data-vi="Giày lười nam da nâu thanh lịch">Elegant Brown Leather Men's Loafers</h2>
+                <div class="testimonal__price">Giá: 720.000đ</div>
+                <div class="testimonal__description" data-vi="Giày lười da nâu, thiết kế đơn giản, dễ mang, phù hợp đi làm hoặc đi chơi.">Brown leather loafers, simple design, easy to wear, suitable for work or outings.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Giày lười nam da nâu thanh lịch', 720, 'img/men/men19.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men20.jpg" height="307" alt="Dép nam trắng, kiểu dáng đơn giản, thoải mái." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Simple White Men's Sandals" data-vi="Dép nam trắng đơn giản">Simple White Men's Sandals</h2>
+                <div class="testimonal__price">Giá: 250.000đ</div>
+                <div class="testimonal__description" data-vi="Dép nam màu trắng, chất liệu nhẹ, kiểu dáng đơn giản, phù hợp đi biển hoặc ở nhà.">White men's sandals, light material, simple style, suitable for beach or home.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Dép nam trắng đơn giản', 250, 'img/men/men20.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men21.jpg" height="307" alt="Boot nam da đen, kiểu dáng mạnh mẽ, cá tính." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Stylish Black Leather Men's Boots" data-vi="Boot nam da đen cá tính">Stylish Black Leather Men's Boots</h2>
+                <div class="testimonal__price">Giá: 1.100.000đ</div>
+                <div class="testimonal__description" data-vi="Boot da đen, thiết kế mạnh mẽ, phù hợp phong cách cá tính, thời trang thu đông.">Black leather boots, strong design, suitable for personal style, autumn winter fashion.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Boot nam da đen cá tính', 1100, 'img/men/men21.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men22.jpg" height="307" alt="Dép sandal nam đen, kiểu dáng năng động, thoải mái." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Dynamic Black Men's Sandals" data-vi="Dép sandal nam đen năng động">Dynamic Black Men's Sandals</h2>
+                <div class="testimonal__price">Giá: 320.000đ</div>
+                <div class="testimonal__description" data-vi="Dép sandal màu đen, chất liệu bền đẹp, phù hợp đi chơi, du lịch hoặc dạo phố.">Black sandals, durable material, suitable for outings, travel or strolling.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Dép sandal nam đen năng động', 320, 'img/men/men22.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men23.jpg" height="307" alt="Giày sneaker nam xám, kiểu dáng thể thao, trẻ trung." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Sporty Gray Men's Sneakers" data-vi="Giày sneaker nam xám thể thao">Sporty Gray Men's Sneakers</h2>
+                <div class="testimonal__price">Giá: 680.000đ</div>
+                <div class="testimonal__description" data-vi="Giày sneaker màu xám, thiết kế thể thao, phù hợp vận động, đi chơi hoặc tập gym.">Gray sneakers, sporty design, suitable for exercise, outings or gym.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Giày sneaker nam xám thể thao', 680, 'img/men/men23.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/men/men24.jpg" height="307" alt="Giày tây nam da nâu, kiểu dáng cổ điển, sang trọng." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Classic Brown Leather Men's Shoes" data-vi="Giày tây nam da nâu cổ điển">Classic Brown Leather Men's Shoes</h2>
+                <div class="testimonal__price">Giá: 870.000đ</div>
+                <div class="testimonal__description" data-vi="Giày tây da nâu, kiểu dáng cổ điển, phù hợp mặc vest, công sở hoặc dự tiệc.">Brown leather formal shoes, classic style, suitable for suits, office or parties.</div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Giày tây nam da nâu cổ điển', 870, 'img/men/men24.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+
+
+                      
+        
+        </div>
+    </main> 
+    <br>
+    <footer class="footer">
+    <div class="footer-section">
+        <h1>Contact Us</h1>
+        <ul class="footer-list">
+            <li>minhnguyendieugmail.com</li>
+            <li>Biên Hòa - Đồng Nai</li>
+            <li>0383270448</li>
+            <li class="border-list"></li>
+            <li class="socials">
+                <a href="" id="linkedin" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="" id="github" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="" id="twitter" target="_blank">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="" id="instagram" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer-section quick-links">
+        <h1>Quick Links</h1>
+        <ul class="footer-list">
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="return-policy.html"><i class="fas fa-undo-alt"></i> Return Policy</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h1>Subscribe to Newsletter</h1>
+        <ul class="footer-list">
+            <li>Be the first to know about exclusive deals and new arrivals straight to your inbox.</li>
+            <li>Join our fashion community today!</li>
+            <li class="sub">
+                <input type="email" placeholder="Enter your email here" id="email-input">
+                <button class="btn" id="open-btn">Subscribe</button>
+            </li>
+        </ul>
+    </div>
+</footer>
+<div class="footer-copyright">
+    <div id="copyright">&copy; <span id="year"></span> MND Fashion. All Rights Reserved.</div>
+</div>
+<script>
+    const currentYear = new Date().getFullYear();
+    document.getElementById('year').textContent = currentYear;
+</script>
+<div class="modal-box" id="modalbox" style="display: none;">
+            <div class="modal" id="modal">
+                <div id="close-btn">&times;</div>
+                <div class="modal-content">
+                    <img src="images\confirmation.png" alt="" height="100px" >
+                    <h2>Subscription Successful!</h2>
+                    <p>Thank you for subscribing.</p>
+                    <p> You will receive notifications via email.</p>
+                </div>
+               
+            </div>
+        </div>
+        <script src="preloader.js"></script>
+        
+    
+    <script>
+        let openbtn = document.getElementById('open-btn');
+let modalbox = document.getElementById('modalbox');
+let closebtn = document.getElementById('close-btn');
+let emailInput = document.getElementById('email-input');
+
+// Email validation function
+function isValidEmail(email) {
+        // Regular expression for validating an email
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
+
+    openbtn.addEventListener('click', function () {
+        // Validate email
+        if (emailInput.value === '') {
+            alert('Please enter your email address.');
+        } else if (!isValidEmail(emailInput.value)) {
+            alert('Please enter a valid email address.');
+        } else {
+            modalbox.style.display = 'block'; // Show the modal
+        }
+    });
+
+    closebtn.addEventListener('click', function () {
+        modalbox.style.display = 'none'; // Hide the modal
+    });
+     // Close modal when clicking outside of it
+     modalbox.addEventListener('click', function(event) {
+        if (event.target === modalbox) {
+            modalbox.style.display = 'none'; // Hide modal if the background is clicked
+        }
+    });
+
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init();
+
+    (function() {
+        let headerVisible = false;
+        document.getElementById("menu").addEventListener("click", function () {
+            if (headerVisible === false) {
+                document.getElementById("header").style.height = "290px";
+                headerVisible = true;
+            } else {
+                document.getElementById("header").style.height = "50px";
+                headerVisible = false;
+            }
+        });
+
+        // Show "Go to Top" button after scrolling down
+        const goTopBtn = document.querySelector(".gotopbtn");
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 200) {  // Show the button after scrolling down 200px
+                goTopBtn.style.display = "block";
+            } else {
+                goTopBtn.style.display = "none";
+            }
+        });
+
+    })();  // IIFE to avoid polluting global scope
+
+    document.getElementById("cart-icon").addEventListener("click", function() {
+    window.location.href = "cart.html";
+});
+ 
+
+const copyBtns = document.querySelectorAll('.copy-btn'); // Get all copy buttons
+const linkTexts = document.querySelectorAll('.link'); // Get all link texts
+
+// Loop through each copy button
+copyBtns.forEach((copyBtn, index) => {
+    copyBtn.addEventListener('click', () => {
+        const textToCopy = linkTexts[index].innerText; // Get the text to copy for the current button
+
+        // Use the Clipboard API to copy the text
+        navigator.clipboard.writeText(textToCopy)
+            .then(() => {
+                alert('Link copied to clipboard!');
+            })
+            .catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+    });
+});
+    // Select all save buttons
+const saveButtons = document.querySelectorAll('.save-icon');
+
+// Loop through each save button and attach event listener
+saveButtons.forEach((saveBtn) => {
+    saveBtn.addEventListener('click', () => {
+        saveBtn.classList.toggle('active'); // Toggle the active class
+    });
+});
+
+
+ // Add item to the cart function
+ function addToCart(name, price, image) {
+    // Retrieve cart from localStorage or initialize it as an empty array
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Add new item to the cart array
+    cart.push({ name, price, image, quantity: 1 });
+
+    // Save updated cart back to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    alert(name + ' has been added to the cart');
+  }
+  </script>
+<script>
+let currentLang = 'en';
+document.getElementById('lang-toggle').addEventListener('click', function() {
+    const elements = document.querySelectorAll('[data-en], [data-vi]');
+    if (currentLang === 'en') {
+        elements.forEach(el => {
+            if (el.dataset.vi) el.textContent = el.dataset.vi;
+        });
+        this.textContent = 'VN';
+        currentLang = 'vi';
+    } else {
+        elements.forEach(el => {
+            if (el.dataset.en) el.textContent = el.dataset.en;
+        });
+        this.textContent = 'EN';
+        currentLang = 'en';
+    }
+});
+</script>
+<div class="gtranslate_wrapper"></div>
+        <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+</script>
+<script src="script/share-button.js"></script>
+<script src="script/progressbar.js"></script>
+</script>   
+<button id="scrollToTopBtn" class="scroll-top" aria-label="Scroll to top">
+    <div class="scroll-top-icon">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+    <svg class="progress-ring" width="60" height="60">
+        <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="4" fill="transparent" r="28" cx="30"
+            cy="30"></circle>
+    </svg>
+</button>
+<style>
+    .scroll-top {
+        position: fixed;
+        right: 1.6%;
+        background: linear-gradient(100deg, #1ca6f0, #3c7aff, #05deff);
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        overflow: visible;
+        z-index: 10;
+        bottom: 15px;
+        /* Ensure button is on top */
+    }
+
+    .scroll-top.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .scroll-top:hover {
+        transform: scale(1.1);
+        /* Subtle scaling instead of expanding */
+        box-shadow: 0 8px 20px rgba(255, 69, 159, 0.6);
+        /* Slightly larger shadow */
+    }
+
+    .scroll-top:active {
+        transform: scale(1.05);
+        /* Minor scale reduction on click */
+    }
+
+    .scroll-top-icon {
+        position: relative;
+        z-index: 2;
+        transition: transform 0.3s ease;
+    }
+
+    .scroll-top:hover .scroll-top-icon {
+        transform: translateY(-3px);
+    }
+
+    /* Progress Ring Styling */
+    .progress-ring {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+        /* To start from the top */
+    }
+
+    .progress-ring__circle {
+        transition: stroke-dashoffset 0.35s;
+        transform-origin: 50% 50%;
+    }
+
+    /* Pulse Animation */
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        }
+
+        50% {
+            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.7);
+        }
+
+        100% {
+            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        }
+    }
+
+    .scroll-top:hover {
+        animation: pulse 1.5s infinite;
+    }
+
+    .scroll-top.show {
+        animation: none;
+        /* No animation when showing the button */
+    }
+
+    .scroll-top.show:hover {
+        animation: pulse 1.5s infinite;
+        /* Pulse on hover */
+    }
+</style>
+<script>
+    // Get the button
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    const progressCircle = document.querySelector(".progress-ring__circle");
+    const radius = progressCircle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+
+    // Set the circle progress properties
+    progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+    progressCircle.style.strokeDashoffset = circumference;
+
+    // Function to show or hide the button based on scroll position
+    function toggleScrollButton() {
+        if (window.scrollY > 100) {
+            scrollToTopBtn.classList.add("show");
+        } else {
+            scrollToTopBtn.classList.remove("show");
+        }
+    }
+
+    // Function to set the scroll progress on the button ring
+    function setProgress(percent) {
+        const offset = circumference - (percent / 100) * circumference;
+        progressCircle.style.strokeDashoffset = offset;
+    }
+
+    // Listen for scroll events to update button visibility and progress
+    window.addEventListener("scroll", () => {
+        toggleScrollButton();
+        const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        setProgress(scrollPercent);
+    });
+
+    // Smooth scroll to top when the button is clicked
+    scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+  </script> 
+<!-- Thêm hiệu ứng bằng GSAP và CSS Animation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+    // Hiệu ứng sản phẩm vào giỏ hàng nâng cấp (tăng thời gian hiệu ứng lên 1.3s)
+    document.querySelectorAll('.add-to-cart').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            // Hiệu ứng nút
+            gsap.fromTo(btn, { scale: 1 }, { scale: 1.2, backgroundColor: "#1ca6f0", color: "#fff", duration: 0.75, yoyo: true, repeat: 1 });
+
+            // Lấy card và ảnh sản phẩm
+            const card = btn.closest('.testimonal__card');
+            const img = card.querySelector('img');
+            const cartIcon = document.getElementById('cart-icon');
+
+            // Tạo bản sao ảnh để bay lên giỏ hàng
+            const flyingImg = img.cloneNode(true);
+            flyingImg.style.position = 'fixed';
+            flyingImg.style.zIndex = 9999;
+            flyingImg.style.width = img.offsetWidth + 'px';
+            flyingImg.style.height = img.offsetHeight + 'px';
+            flyingImg.style.left = img.getBoundingClientRect().left + 'px';
+            flyingImg.style.top = img.getBoundingClientRect().top + 'px';
+            flyingImg.style.borderRadius = '12px';
+            flyingImg.style.pointerEvents = 'none';
+            flyingImg.style.transition = 'none';
+            document.body.appendChild(flyingImg);
+
+            // Tính vị trí icon giỏ hàng
+            const cartRect = cartIcon.getBoundingClientRect();
+            const targetX = cartRect.left + cartRect.width / 2 - img.offsetWidth / 4;
+            const targetY = cartRect.top + cartRect.height / 2 - img.offsetHeight / 4;
+
+            // Animate: thu nhỏ và bay lên icon giỏ hàng (tăng duration lên 1.3s)
+            gsap.to(flyingImg, {
+                width: img.offsetWidth / 2,
+                height: img.offsetHeight / 2,
+                left: targetX,
+                top: targetY,
+                borderRadius: '50%',
+                opacity: 0.7,
+                duration: 1.3,
+                ease: "power2.in",
+                onComplete: function() {
+                    flyingImg.remove();
+                    // Rung icon giỏ hàng khi nhận sản phẩm
+                    gsap.fromTo(cartIcon, { scale: 1 }, { scale: 1.3, duration: 0.7, yoyo: true, repeat: 1 });
+                }
+            });
+
+            // Hiệu ứng rung sản phẩm (tăng duration lên 0.6s)
+            gsap.fromTo(card, { x: 0 }, { x: 20, duration: 0.6, yoyo: true, repeat: 3, ease: "power1.inOut" });
+        });
+    });
+
+    // Hiệu ứng lưu sản phẩm (save-icon)
+    document.querySelectorAll('.save-icon').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            gsap.fromTo(btn, { scale: 1 }, { scale: 1.3, color: "#ff4c4c", duration: 0.7, yoyo: true, repeat: 1 });
+        });
+    });
+
+    // Hiệu ứng chia sẻ sản phẩm (share-icon)
+    document.querySelectorAll('.share-icon').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            gsap.fromTo(btn, { rotation: 0 }, { rotation: 30, duration: 0.7, yoyo: true, repeat: 1 });
+        });
+    });
+</script>
+<style>
+/* Hiệu ứng highlight khi thêm vào giỏ hàng */
+.testimonal__card.added-to-cart {
+    animation: highlightCart 0.6s;
+}
+@keyframes highlightCart {
+    0% { box-shadow: 0 0 0px #1ca6f0; }
+    50% { box-shadow: 0 0 20px #1ca6f0; }
+    100% { box-shadow: 0 0 0px #1ca6f0; }
+}
+
+/* CSS cho hiệu ứng cuộn */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hiệu ứng cho scroll to top button */
+#scrollToTopBtn {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng parallax cho background */
+.hero, .banner, .bg-image {
+    will-change: transform;
+}
+
+/* Hiệu ứng fade-in */
+.fade-in-visible {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Smooth scroll cho mobile */
+@media (prefers-reduced-motion: no-preference) {
+    * {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Hiệu ứng hover cho cards khi cuộn */
+.testimonal__card {
+    transition: all 0.3s ease;
+}
+
+.testimonal__card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+</style>
+</body>
+</html>

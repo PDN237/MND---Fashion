@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MND - Kid Store</title>
+   
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" herf="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+
+    <style>
+         .testimonal__card {
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            height: auto;
+            min-height: 490px;
+        }
+
+        .testimonal__card:hover {
+            transform: translateY(-10px);
+            background-color: #f7f7f7;
+            box-shadow: 0 0 20px rgba(255, 216, 42, 0.5), 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+    
+         .testimonal__card img{
+            width: 100%;
+            aspect-ratio: 2/2.5;
+            object-fit: cover;
+         }
+
+
+        /* Testimonial Title */
+        .testimonal__title {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        /* Testimonial Description */
+        .testimonal__description {
+
+            font-size: 1.2rem;
+            padding: 0.75rem 1rem;
+        }
+
+
+        .testimonal__swiper {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Cards Wrapper */
+        .cards {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .my2 {
+            background-color: black;
+            color: white;
+            padding: 5px 0px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        
+/* Scroll Progress Bar*/
+#progress-container {
+  position: fixed ;
+  top: 1px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  z-index: 99990;
+  /* background: #f3f3f3; */
+}
+
+#progress-bar {
+  position: fixed;
+  top: 0.3px;
+  left: 0;
+  width: 0%;
+  height: 6px;
+  width: 0;
+  background: linear-gradient(90deg, rgba(27, 27, 27, 0.762) 0%, rgb(61, 61, 61) 50%, rgba(38, 38, 38, 0.679) 100%);
+  box-shadow: 0 0 4px rgba(255, 244, 221, 0.7), 0 0 10px rgba(255, 255, 255, 0.496);
+  transition: width 0.09s ease-in-out;
+  /* border-radius: 10px; */
+}
+
+
+        .fa-star{
+             /* margin-top: 12px; */
+             /* margin: 12px; */
+        }
+        .star{
+           margin: 10px;
+        }
+        .checked{
+            color: orange;
+        }
+
+.button-container:hover{
+    background-color: #333;
+    color: #fff;
+    border-color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+ }
+
+
+
+       
+    </style>
+</head>
+</head>
+<body>
+   
+    <!-- header section  -->
+    <header class="header" id="header">
+          <div class="logo">
+            <a href="/"> <img src="images/logolight.png" alt="Logo" srcset=""> </a>
+            <i class="fa-solid fa-bars menu" id="menu"></i>
+        </div>
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+          </div>
+
+        <nav class="navigation">
+            <div class="pro-tabs-container">
+                <ul id="pro-tabs" class="nav-links" >
+                    <li class="nav-link border">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="nav-link border">
+                        <a href="Boy.html">Boy Section</a>
+                    </li>
+                    <li class="nav-link border">
+                        <a href="#Topwear">Topwear</a>
+                    </li>
+                    <li class="nav-link border">
+                        <a href="#Bottomwear">Bottomwear</a>
+                    </li>
+                    <li class="nav-link border">
+                        <a href="#Footwear">Footwear</a>
+                    </li>
+                    <li class="nav-link border" style="margin-left: 15px;">
+                        <a href="contact.html">Contact Us</a>
+                    </li> 
+                </ul>
+        </div>
+        </nav>
+
+        <nav class="utils">
+            <ul class="nav-links">
+                <li class="nav-link" id="cart-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </li>
+                <li class="nav-link">
+                    <a href="login-sginup.html">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </li>
+            </ul>
+        </nav>
+    </header>
+     <main>
+        <div class="container">
+            <div class="slider">
+                <a href="#Bottomwear"><img src="img/kid/kid0.jpg" alt="" height="450px" width="100%vw"></a>      
+            </div>
+           <h2 class="my2" id="Topwear">Topwear Trẻ Em</h2>
+<div class="cards">
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid1.jpg" height="307" alt="Áo thun polo trắng cho bé trai, chất liệu cotton thoáng mát." style="padding: 5px;">
+                <h2 class="testimonal__title">Áo thun polo trắng bé trai</h2>
+                <div class="testimonal__price">Giá: 120.000đ</div>
+                <div class="testimonal__description">
+                    Áo thun polo màu trắng, chất liệu cotton mềm mại, thoáng mát, phù hợp đi học hoặc đi chơi.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Áo thun polo trắng bé trai', 120, 'img/kid/kid1.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid2.jpg" height="307" alt="Áo sơ mi xanh nhạt cho bé trai, kiểu dáng lịch sự." style="padding: 5px;">
+                <h2 class="testimonal__title">Áo sơ mi xanh nhạt bé trai</h2>
+                <div class="testimonal__price">Giá: 150.000đ</div>
+                <div class="testimonal__description">
+                    Áo sơ mi màu xanh nhạt, chất liệu cotton, kiểu dáng lịch sự, phù hợp đi học hoặc dự tiệc.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Áo sơ mi xanh nhạt bé trai', 150, 'img/kid/kid2.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid3.jpg" height="307" alt="Áo hoodie xám cho bé trai, giữ ấm tốt." style="padding: 5px;">
+                <h2 class="testimonal__title">Áo hoodie xám bé trai</h2>
+                <div class="testimonal__price">Giá: 180.000đ</div>
+                <div class="testimonal__description">
+                    Áo hoodie màu xám, chất liệu nỉ dày dặn, giữ ấm tốt, phù hợp mùa đông.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Áo hoodie xám bé trai', 180, 'img/kid/kid3.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid4.jpg" height="307" alt="Áo khoác kaki xanh rêu cho bé trai, kiểu dáng năng động." style="padding: 5px;">
+                <h2 class="testimonal__title">Áo khoác kaki xanh rêu bé trai</h2>
+                <div class="testimonal__price">Giá: 200.000đ</div>
+                <div class="testimonal__description">
+                    Áo khoác kaki màu xanh rêu, chất liệu dày dặn, kiểu dáng năng động, phù hợp đi chơi.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Áo khoác kaki xanh rêu bé trai', 200, 'img/kid/kid4.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid5.jpg" height="307" alt="Áo kiểu tay phồng trắng cho bé gái, thiết kế dễ thương." style="padding: 5px;">
+                <h2 class="testimonal__title">Áo kiểu tay phồng trắng bé gái</h2>
+                <div class="testimonal__price">Giá: 130.000đ</div>
+                <div class="testimonal__description">
+                    Áo kiểu tay phồng màu trắng, chất liệu cotton, thiết kế dễ thương, phù hợp đi chơi hoặc dự tiệc.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Áo kiểu tay phồng trắng bé gái', 130, 'img/kid/kid5.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid6.jpg" height="307" alt="Áo len cardigan be cho bé gái, giữ ấm tốt." style="padding: 5px;">
+                <h2 class="testimonal__title">Áo len cardigan be bé gái</h2>
+                <div class="testimonal__price">Giá: 160.000đ</div>
+                <div class="testimonal__description">
+                    Áo len cardigan màu be, chất liệu len mềm, giữ ấm tốt, phù hợp mùa lạnh.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Áo len cardigan be bé gái', 160, 'img/kid/kid6.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid7.jpg" height="307" alt="Áo hoodie trắng cho bé gái, kiểu dáng năng động." style="padding: 5px;">
+                <h2 class="testimonal__title">Áo hoodie trắng bé gái</h2>
+                <div class="testimonal__price">Giá: 170.000đ</div>
+                <div class="testimonal__description">
+                    Áo hoodie màu trắng, chất liệu nỉ mềm, kiểu dáng năng động, phù hợp đi chơi hoặc đi học.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Áo hoodie trắng bé gái', 170, 'img/kid/kid7.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid8.jpg" height="307" alt="Áo khoác be cho bé gái, thiết kế thời trang." style="padding: 5px;">
+                <h2 class="testimonal__title">Áo khoác be bé gái thời trang</h2>
+                <div class="testimonal__price">Giá: 190.000đ</div>
+                <div class="testimonal__description">
+                    Áo khoác màu be, chất liệu nhẹ, thiết kế thời trang, phù hợp mặc đi chơi hoặc dạo phố.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Áo khoác be bé gái thời trang', 190, 'img/kid/kid8.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<h2 class="my2" id="Bottomwear">Bottomwear Trẻ Em</h2>
+<div class="cards">
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid9.jpg" height="307" alt="Bộ quần áo bé trai màu be, kiểu dáng năng động." style="padding: 5px;">
+                <h2 class="testimonal__title">Bộ quần áo bé trai màu be</h2>
+                <div class="testimonal__price">Giá: 210.000đ</div>
+                <div class="testimonal__description">
+                    Bộ quần áo màu be, chất liệu cotton thoáng mát, phù hợp đi học hoặc đi chơi.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Bộ quần áo bé trai màu be', 210, 'img/kid/kid9.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid10.jpg" height="307" alt="Quần jeans xanh cho bé trai, kiểu dáng khỏe khoắn." style="padding: 5px;">
+                <h2 class="testimonal__title">Quần jeans xanh bé trai</h2>
+                <div class="testimonal__price">Giá: 170.000đ</div>
+                <div class="testimonal__description">
+                    Quần jeans xanh, chất liệu denim bền đẹp, phù hợp mặc đi chơi hoặc đi học.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Quần jeans xanh bé trai', 170, 'img/kid/kid10.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid11.jpg" height="307" alt="Quần jogger đen cho bé trai, kiểu dáng thể thao." style="padding: 5px;">
+                <h2 class="testimonal__title">Quần jogger đen bé trai</h2>
+                <div class="testimonal__price">Giá: 160.000đ</div>
+                <div class="testimonal__description">
+                    Quần jogger màu đen, chất liệu co giãn, phù hợp vận động, đi học hoặc đi chơi.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Quần jogger đen bé trai', 160, 'img/kid/kid11.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid12.jpg" height="307" alt="Quần short kaki xanh cho bé trai, kiểu dáng năng động." style="padding: 5px;">
+                <h2 class="testimonal__title">Quần short kaki xanh bé trai</h2>
+                <div class="testimonal__price">Giá: 140.000đ</div>
+                <div class="testimonal__description">
+                    Quần short kaki màu xanh, chất liệu nhẹ, phù hợp mặc mùa hè hoặc đi chơi.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Quần short kaki xanh bé trai', 140, 'img/kid/kid12.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid13.jpg" height="307" alt="Chân váy xếp ly nâu cho bé gái, kiểu dáng nữ tính." style="padding: 5px;">
+                <h2 class="testimonal__title">Chân váy xếp ly nâu bé gái</h2>
+                <div class="testimonal__price">Giá: 130.000đ</div>
+                <div class="testimonal__description">
+                    Chân váy xếp ly màu nâu, chất liệu nhẹ, kiểu dáng nữ tính, phù hợp đi học hoặc đi chơi.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Chân váy xếp ly nâu bé gái', 130, 'img/kid/kid13.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid14.jpg" height="307" alt="Váy xòe màu hồng cho bé gái, thiết kế dễ thương." style="padding: 5px;">
+                <h2 class="testimonal__title">Váy xòe màu hồng bé gái</h2>
+                <div class="testimonal__price">Giá: 150.000đ</div>
+                <div class="testimonal__description">
+                    Váy xòe màu hồng, chất liệu mềm mại, thiết kế dễ thương, phù hợp đi chơi hoặc dự tiệc.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Váy xòe màu hồng bé gái', 150, 'img/kid/kid14.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid15.jpg" height="307" alt="Quần short hồng cho bé gái, kiểu dáng năng động." style="padding: 5px;">
+                <h2 class="testimonal__title">Quần short hồng bé gái</h2>
+                <div class="testimonal__price">Giá: 120.000đ</div>
+                <div class="testimonal__description">
+                    Quần short màu hồng, chất liệu cotton, kiểu dáng năng động, phù hợp mặc mùa hè.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Quần short hồng bé gái', 120, 'img/kid/kid15.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid16.jpg" height="307" alt="Váy xòe xám cho bé gái, kiểu dáng hiện đại." style="padding: 5px;">
+                <h2 class="testimonal__title">Váy xòe xám bé gái</h2>
+                <div class="testimonal__price">Giá: 140.000đ</div>
+                <div class="testimonal__description">
+                    Váy xòe màu xám, chất liệu nhẹ, kiểu dáng hiện đại, phù hợp đi học hoặc đi chơi.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Váy xòe xám bé gái', 140, 'img/kid/kid16.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+                    
+                </div>
+              
+                
+                
+            </div>
+            
+                    
+                </div>
+            </div>   
+                
+            <h2 class="my2" id="Footwear">Footwear Trẻ Em</h2>
+<div class="cards">
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid17.jpg" height="307" alt="Giày búp bê màu be cho bé gái, kiểu dáng dễ thương." style="padding: 5px;">
+                <h2 class="testimonal__title">Giày búp bê màu be bé gái</h2>
+                <div class="testimonal__price">Giá: 110.000đ</div>
+                <div class="testimonal__description">
+                    Giày búp bê màu be, chất liệu mềm mại, phù hợp đi học hoặc đi chơi.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Giày búp bê màu be bé gái', 110, 'img/kid/kid17.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid18.jpg" height="307" alt="Giày sneaker trắng cho bé trai, kiểu dáng năng động." style="padding: 5px;">
+                <h2 class="testimonal__title">Giày sneaker trắng bé trai</h2>
+                <div class="testimonal__price">Giá: 130.000đ</div>
+                <div class="testimonal__description">
+                    Giày sneaker màu trắng, chất liệu nhẹ, phù hợp đi học hoặc vận động ngoài trời.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Giày sneaker trắng bé trai', 130, 'img/kid/kid18.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                    </article>
+                </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid19.jpg" height="307" alt="Giày thể thao trắng cho bé trai, kiểu dáng khỏe khoắn." style="padding: 5px;">
+                <h2 class="testimonal__title">Giày thể thao trắng bé trai</h2>
+                <div class="testimonal__price">Giá: 140.000đ</div>
+                <div class="testimonal__description">
+                    Giày thể thao màu trắng, chất liệu bền đẹp, phù hợp đi học hoặc chơi thể thao.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Giày thể thao trắng bé trai', 140, 'img/kid/kid19.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid20.jpg" height="307" alt="Dép sandal đen cho bé trai, kiểu dáng đơn giản." style="padding: 5px;">
+                <h2 class="testimonal__title">Dép sandal đen bé trai</h2>
+                <div class="testimonal__price">Giá: 90.000đ</div>
+                <div class="testimonal__description">
+                    Dép sandal màu đen, chất liệu nhẹ, phù hợp đi biển hoặc ở nhà.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Dép sandal đen bé trai', 90, 'img/kid/kid20.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid21.jpg" height="307" alt="Sandal trắng cho bé gái, kiểu dáng nữ tính." style="padding: 5px;">
+                <h2 class="testimonal__title">Sandal trắng bé gái nữ tính</h2>
+                <div class="testimonal__price">Giá: 100.000đ</div>
+                <div class="testimonal__description">
+                    Sandal màu trắng, thiết kế nữ tính, phù hợp đi chơi hoặc dự tiệc.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Sandal trắng bé gái nữ tính', 100, 'img/kid/kid21.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid22.jpg" height="307" alt="Giày búp bê trắng cho bé gái, kiểu dáng dễ thương." style="padding: 5px;">
+                <h2 class="testimonal__title">Giày búp bê trắng bé gái</h2>
+                <div class="testimonal__price">Giá: 115.000đ</div>
+                <div class="testimonal__description">
+                    Giày búp bê màu trắng, chất liệu mềm mại, phù hợp đi học hoặc đi chơi.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Giày búp bê trắng bé gái', 115, 'img/kid/kid22.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid23.jpg" height="307" alt="Giày cao gót cho bé gái, kiểu dáng thời trang." style="padding: 5px;">
+                <h2 class="testimonal__title">Giày cao gót bé gái thời trang</h2>
+                <div class="testimonal__price">Giá: 125.000đ</div>
+                <div class="testimonal__description">
+                    Giày cao gót màu be, thiết kế thời trang, phù hợp dự tiệc hoặc đi chơi.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Giày cao gót bé gái thời trang', 125, 'img/kid/kid23.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/kid/kid24.jpg" height="307" alt="Giày sneaker trắng cho bé gái, kiểu dáng năng động." style="padding: 5px;">
+                <h2 class="testimonal__title">Giày sneaker trắng bé gái</h2>
+                <div class="testimonal__price">Giá: 135.000đ</div>
+                <div class="testimonal__description">
+                    Giày sneaker màu trắng, chất liệu nhẹ, phù hợp đi học hoặc đi chơi.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                    <button class="add-to-cart" onclick="addToCart('Giày sneaker trắng bé gái', 135, 'img/kid/kid24.jpg')">Add to Cart</button>
+                    <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                    <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="quick-share">
+                            <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></button>
+                            <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+
+                    
+                </div>
+            </div>
+        </div>
+    </main> 
+    <footer class="footer">
+    <div class="footer-section">
+        <h1>Contact Us</h1>
+        <ul class="footer-list">
+            <li>minhnguyendieugmail.com</li>
+            <li>Biên Hòa - Đồng Nai</li>
+            <li>0383270448</li>
+            <li class="border-list"></li>
+            <li class="socials">
+                <a href="" id="linkedin" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="" id="github" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="" id="twitter" target="_blank">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="" id="instagram" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer-section quick-links">
+        <h1>Quick Links</h1>
+        <ul class="footer-list">
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="return-policy.html"><i class="fas fa-undo-alt"></i> Return Policy</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h1>Subscribe to Newsletter</h1>
+        <ul class="footer-list">
+            <li>Be the first to know about exclusive deals and new arrivals straight to your inbox.</li>
+            <li>Join our fashion community today!</li>
+            <li class="sub">
+                <input type="email" placeholder="Enter your email here" id="email-input">
+                <button class="btn" id="open-btn">Subscribe</button>
+            </li>
+        </ul>
+    </div>
+</footer>
+<div class="footer-copyright">
+    <div id="copyright">&copy; <span id="year"></span> MND Fashion. All Rights Reserved.</div>
+</div>
+<script>
+    const currentYear = new Date().getFullYear();
+    document.getElementById('year').textContent = currentYear;
+</script>
+<div class="modal-box" id="modalbox" style="display: none;">
+            <div class="modal" id="modal">
+                <div id="close-btn">&times;</div>
+                <div class="modal-content">
+                    <img src="images\confirmation.png" alt="" height="100px" >
+                    <h2>Subscription Successful!</h2>
+                    <p>Thank you for subscribing.</p>
+                    <p> You will receive notifications via email.</p>
+                </div>
+               
+            </div>
+        </div>
+        
+    
+    <script>
+        let openbtn = document.getElementById('open-btn');
+let modalbox = document.getElementById('modalbox');
+let closebtn = document.getElementById('close-btn');
+let emailInput = document.getElementById('email-input');
+
+// Email validation function
+function isValidEmail(email) {
+        // Regular expression for validating an email
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
+
+    openbtn.addEventListener('click', function () {
+        // Validate email
+        if (emailInput.value === '') {
+            alert('Please enter your email address.');
+        } else if (!isValidEmail(emailInput.value)) {
+            alert('Please enter a valid email address.');
+        } else {
+            modalbox.style.display = 'block'; // Show the modal
+        }
+    });
+
+    closebtn.addEventListener('click', function () {
+        modalbox.style.display = 'none'; // Hide the modal
+    });
+     // Close modal when clicking outside of it
+     modalbox.addEventListener('click', function(event) {
+        if (event.target === modalbox) {
+            modalbox.style.display = 'none'; // Hide modal if the background is clicked
+        }
+    });
+
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+
+    (function() {
+        let headerVisible = false;
+        document.getElementById("menu").addEventListener("click", function () {
+            if (headerVisible === false) {
+                document.getElementById("header").style.height = "290px";
+                headerVisible = true;
+            } else {
+                document.getElementById("header").style.height = "50px";
+                headerVisible = false;
+            }
+        });
+
+        // Show "Go to Top" button after scrolling down
+        const goTopBtn = document.querySelector(".gotopbtn");
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 200) {  // Show the button after scrolling down 200px
+                goTopBtn.style.display = "block";
+            } else {
+                goTopBtn.style.display = "none";
+            }
+        });
+
+    })();  // IIFE to avoid polluting global scope
+
+    document.getElementById("cart-icon").addEventListener("click", function() {
+    window.location.href = "cart.html";
+});
+
+// Select all share buttons and share option containers
+const shareButtons = document.querySelectorAll('.share-icon');
+const shareOptions = document.querySelectorAll('.share-options');
+
+// Loop through each share button and attach event listener
+shareButtons.forEach((shareBtn, index) => {
+    shareBtn.addEventListener('click', () => {
+        console.log(`Share button ${index + 1} clicked`);
+        shareOptions[index].classList.toggle('active');
+    });
+});
+
+
+const copyBtns = document.querySelectorAll('.copy-btn'); // Get all copy buttons
+const linkTexts = document.querySelectorAll('.link'); // Get all link texts
+
+// Loop through each copy button
+copyBtns.forEach((copyBtn, index) => {
+    copyBtn.addEventListener('click', () => {
+        const textToCopy = linkTexts[index].innerText; // Get the text to copy for the current button
+
+        // Use the Clipboard API to copy the text
+        navigator.clipboard.writeText(textToCopy)
+            .then(() => {
+                alert('Link copied to clipboard!');
+            })
+            .catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+    });
+});
+    // Select all save buttons
+const saveButtons = document.querySelectorAll('.save-icon');
+
+// Loop through each save button and attach event listener
+saveButtons.forEach((saveBtn) => {
+    saveBtn.addEventListener('click', () => {
+        saveBtn.classList.toggle('active'); // Toggle the active class
+    });
+});
+
+ // Add item to the cart function
+ function addToCart(name, price, image) {
+    // Retrieve cart from localStorage or initialize it as an empty array
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Add new item to the cart array
+    cart.push({ name, price, image, quantity: 1 });
+
+    // Save updated cart back to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    alert(name + ' has been added to the cart');
+  }
+</script>
+<button id="scrollToTopBtn" class="scroll-top" aria-label="Scroll to top">
+    <div class="scroll-top-icon">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+    <svg class="progress-ring" width="60" height="60">
+        <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="4" fill="transparent" r="28" cx="30"
+            cy="30"></circle>
+    </svg>
+</button>
+<style>
+    .scroll-top {
+        position: fixed;
+        right: 1.6%;
+        background: linear-gradient(100deg, #1ca6f0, #3c7aff, #05deff);
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        overflow: visible;
+        z-index: 10;
+        bottom: 15px;
+        /* Ensure button is on top */
+    }
+
+    .scroll-top.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .scroll-top:hover {
+        transform: scale(1.1);
+        /* Subtle scaling instead of expanding */
+        box-shadow: 0 8px 20px rgba(255, 69, 159, 0.6);
+        /* Slightly larger shadow */
+    }
+
+    .scroll-top:active {
+        transform: scale(1.05);
+        /* Minor scale reduction on click */
+    }
+
+    .scroll-top-icon {
+        position: relative;
+        z-index: 2;
+        transition: transform 0.3s ease;
+    }
+
+    .scroll-top:hover .scroll-top-icon {
+        transform: translateY(-3px);
+    }
+
+    /* Progress Ring Styling */
+    .progress-ring {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+        /* To start from the top */
+    }
+
+    .progress-ring__circle {
+        transition: stroke-dashoffset 0.35s;
+        transform-origin: 50% 50%;
+    }
+
+    /* Pulse Animation */
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        }
+
+        50% {
+            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.7);
+        }
+
+        100% {
+            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        }
+    }
+
+    .scroll-top:hover {
+        animation: pulse 1.5s infinite;
+    }
+
+    .scroll-top.show {
+        animation: none;
+        /* No animation when showing the button */
+    }
+
+    .scroll-top.show:hover {
+        animation: pulse 1.5s infinite;
+        /* Pulse on hover */
+    }
+</style>
+<script>
+    // Get the button
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    const progressCircle = document.querySelector(".progress-ring__circle");
+    const radius = progressCircle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+
+    // Set the circle progress properties
+    progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+    progressCircle.style.strokeDashoffset = circumference;
+
+    // Function to show or hide the button based on scroll position
+    function toggleScrollButton() {
+        if (window.scrollY > 100) {
+            scrollToTopBtn.classList.add("show");
+        } else {
+            scrollToTopBtn.classList.remove("show");
+        }
+    }
+
+    // Function to set the scroll progress on the button ring
+    function setProgress(percent) {
+        const offset = circumference - (percent / 100) * circumference;
+        progressCircle.style.strokeDashoffset = offset;
+    }
+
+    // Listen for scroll events to update button visibility and progress
+    window.addEventListener("scroll", () => {
+        toggleScrollButton();
+        const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        setProgress(scrollPercent);
+    });
+
+    // Smooth scroll to top when the button is clicked
+    scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+  </script>    
+</body>
+</html>
+  </script>    
+</body>
+</html>

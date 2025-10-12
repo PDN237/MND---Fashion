@@ -1,0 +1,3302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logolight.png" type="image/x-icon">
+    <title>MND - Fashion</title>
+    <link rel="stylesheet" href="preloaderStyle.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" herf="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link rel="stylesheet" href="./Style/popup.css">
+    <style>
+    /* Page transition styles */
+    body {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+    body.loaded {
+        opacity: 1;
+    }
+    body.fade-out {
+        opacity: 0;
+    }
+
+    /* Base styling for .slide-details */
+    .slide-details {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    /* Base styling for text */
+    .slide-details h1 p,
+    .slide-details p {
+        color: #333;
+        transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    /* Hover effect for text within .slide-details */
+    .slide-details h1 p:hover,
+    .slide-details p:hover {
+        transform: perspective(800px) scale(1.1);
+        color: black;
+        text-shadow: 0px 0px 10px rgba(169, 169, 169, 0.8);
+    }
+    /* Ghi đè màu nền header và nav khi light/dark mode */
+.header,
+.bg-neutral-100,
+header {
+    background: #f5f0ea !important;
+    background-color: #f5f0ea !important;
+}
+.dark-theme .header,
+.dark-theme .bg-neutral-100,
+.dark-theme header {
+    background: #2a2420 !important;
+    background-color: #2a2420 !important;
+}
+.header, header, .bg-neutral-100 {
+    /* position: static !important; */  /* Comment hoặc xóa để fixed hoạt động */
+    /* top: auto !important; */        /* Comment hoặc xóa */
+    width: 100% !important;            /* Giữ dòng này nếu cần */
+    /* z-index: auto !important; */    /* Comment hoặc xóa */
+}
+.sticky {
+    height: 70px;  /* Giữ nguyên kích thước */
+    width: 100%;
+    padding: 0px 2%;
+    position: fixed;
+    top: 0px;
+    z-index: 100000;  /* Tăng từ 1000 lên 100000 để ở trên cùng */
+    background-color: rgb(248,247,247);
+    display: flex;
+    justify-content: space-between;
+}
+.footer {
+    background: #f5f0ea !important;
+    background-color: #f5f0ea !important;
+}
+.dark-theme .footer {
+    background: #2a2420 !important;
+    background-color: #2a2420 !important;
+}
+.footer-copyright {
+    background: #f5f0ea !important;
+    background-color: #f5f0ea !important;
+}
+.dark-theme .footer-copyright {
+    background: #2a2420 !important;
+    background-color: #2a2420 !important;
+}
+
+/* Đổi màu chữ cho footer và copyright khi dark mode */
+.dark-theme .footer,
+.dark-theme .footer * ,
+.dark-theme .footer-copyright,
+.dark-theme .footer-copyright * {
+    color: #f0e6db !important;
+}
+
+/* Đổi màu chữ cho footer và copyright khi light mode */
+.footer,
+.footer *,
+.footer-copyright,
+.footer-copyright * {
+    color: #2c2c2c !important;
+}
+
+/* Đổi màu chữ cho toàn bộ nội dung chính khi dark mode */
+.dark-theme .products,
+.dark-theme .products *,
+.dark-theme .categories,
+.dark-theme .categories *,
+.dark-theme .insta,
+.dark-theme .insta *,
+.dark-theme .section-title,
+.dark-theme .product-name,
+.dark-theme .product-price {
+    color: #f0e6db !important;
+}
+
+/* Light mode: màu chữ đậm */
+.products,
+.products *,
+.categories,
+.categories *,
+.insta,
+.insta *,
+.section-title,
+.product-name,
+.product-price {
+    color: #2c2c2c !important;
+    
+}
+#visitorCount,
+.website-counter {
+    color: #f5f0ea !important;
+}
+.footer #visitorCount,
+.footer .website-counter,
+.dark-theme .footer #visitorCount,
+.dark-theme .footer .website-counter {
+    color: #f5f0ea !important;
+}
+.footer .visitor-counter #visitorCount,
+.footer .visitor-counter .website-counter {
+    color: #f5f0ea !important;
+}
+.dark-theme .footer .visitor-counter #visitorCount,
+.dark-theme .footer .visitor-counter .website-counter {
+    color: #f5f0ea !important;
+}
+
+
+/* LIGHT MODE: Ẩn ảnh Dark Mode (là con thứ 2) */
+.bg-image img:last-child {
+    display: none !important;
+}
+
+/* HIỆN ảnh Light Mode (là con đầu tiên) */
+.bg-image img:first-child {
+    display: block !important; 
+}/* DARK MODE: Ẩn ảnh sáng (con đầu tiên), hiện ảnh tối (con cuối cùng) */
+
+/* ẨN ảnh Light Mode */
+.dark-theme .bg-image img:first-child {
+    display: none !important; 
+}
+
+/* HIỆN ảnh Dark Mode */
+.dark-theme .bg-image img:last-child {
+    display: block !important; 
+}
+    </style>
+</head>
+
+<body>
+     <!-- preloader -->
+  <div id="preloader">
+    <div class="wrapper">
+        <div class="box-wrap">
+            <div class="box one"></div>
+            <div class="box two"></div>
+            <div class="box three"></div>
+            <div class="box four"></div>
+            <div class="box five"></div>
+            <div class="box six"></div>
+        </div>
+    </div>
+</div>
+<div id="progress-container">
+    <div id="progress-bar"></div>
+  </div>
+
+    <!-- header section  -->
+    <header class="header" id="header">
+        <div class="logo">
+    <a href="/"> <img src="images/logolight.png" alt="Logo" class="light-logo"> </a> 
+    <a href="/"> <img src="images/logodark.png" alt="Logo" class="dark-logo"> </a> 
+    <i class="fa-solid fa-bars menu theme-icon" id="menu"></i>
+</div>
+            <i class="fa-solid fa-bars menu theme-icon" id="menu"></i>
+        </div>
+
+        <nav class="bg-neutral-100 py-20">
+            <div class="tabs-container">
+                <ul id="tabs" class="tabs">
+                    <li class="tab">
+                        <a href="index.html" class="active">Home</a>
+                        <div class="cursor"></div>
+                    </li>
+                    <li class="tab">
+                        <a href="about.html">About</a>
+                        <div class="cursor"></div>
+                    </li>
+                    <li class="tab">
+                        <a href="features.html">Features</a>
+                        <div class="cursor"></div>
+                    </li>
+                    <li class="dropdown tab">
+                        <a class="dropdown-parent">Products</a>
+                        <div class="cursor"></div>
+                        <ul class="dropdown-content ">
+                            <li><a href="mens.html" class="priye">Men</a>
+                            </li>
+                            <li><a href="womens.html">Women</a></li>
+                            <li><a href="child.html">Kid Section</a></li>
+                            <li><a href="accessories.html">Accessories</a></li>
+                        </ul>
+                    </li>
+                    <li class="tab" style="margin-left: 15px;">
+                        <a href="contact.html">Contact Us</a>
+                        <div class="cursor"></div>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+        
+       
+        
+        <nav class="utils">
+            <ul class="nav-links">
+                <li>
+                    <button class="mode-toggle" id="modeToggle">                                                                                                                                                                                 
+                        <span class="sun-icon glow"><img src="day-mode.png" alt="Light mode"></span>
+                        <span class="moon-icon glow hidden"><img src="moon.png" alt="Dark mode"></span>
+                    </button>
+                </li>
+                <li class="nav-link">
+                    <i class="fa-solid fa-cart-shopping" id="cart-icon"></i>
+                </li>
+                <li class="nav-link">
+                    <a href="login-sginup.html">
+                        <i class="fa-solid fa-user theme-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Search Bar -->
+    <div id="search-bar">
+        <input type=" text " id=" search " placeholder=" Search..." />
+        <button type="submit" id="search-btn">Go</button> <!-- Add ID to the button -->
+    </div>
+    <script src=" preloader.js "></script>
+    <script>
+        // Add loaded class after preloader
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 100); // Small delay to ensure preloader is hidden
+        });
+
+        // Page transition on link clicks
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href*="index.html"], a[href*="about.html"], a[href*="contact.html"], a[href*="features.html"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = this.href;
+                    }, 500);
+                });
+            });
+        });
+    </script>
+    <style>
+    /* Style for the search bar, initially hidden */
+    #search-bar {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #f5f0ea; /* Light mode background */
+        padding: 10px;     
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Thêm code của bạn tại đây: */
+.slide-details h1, 
+.slide-details p, 
+.explore-more {
+    color: #f0e6db !important; /* ĐÂY LÀ MÀU BE CHO CHẾ ĐỘ SÁNG */
+} 
+    body {
+        background-color: #f5f0ea; /* Light mode background */
+        color: #2c2c2c; /* Đen than */
+    }
+    .dark-theme {
+        background-color: #332c27; /* Dark mode background */
+        color: #f0e6db; /* Trắng be */
+    }
+/* DARK MODE - Chuyển chữ slide-details và nút Explore More sang Nâu Đậm */
+.dark-theme .slide-details h1, 
+.dark-theme .slide-details p, 
+.dark-theme .explore-more {
+    color: #4e342e !important; /* Dùng mã màu Nâu Đậm bạn muốn tại đây */
+}
+    /* Css for language box */
+    .lang-box{
+        align-items: center;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .hidden{
+        display: none;
+    }
+    
+    /* Default (Light Mode) */
+    .theme-icon {
+        color: #2c2c2c; /* Light mode icon color */
+    }
+
+    /* Dark Mode */
+    .dark-theme .theme-icon {
+        color: #f0e6db; /* Dark mode icon color */
+    }
+
+    /* Styling the input box and button */
+    #search-bar input {
+        padding: 5px;
+        width: 200px;
+        border: 1px solid #d9d3cc; /* Light mode border */
+        border-radius: 3px;
+        outline: none;
+        background: #f5f0ea; /* Light mode input background */
+        color: #2c2c2c;
+    }
+    .dark-theme #search-bar {
+        background-color: #2a2420; /* Dark mode background */
+    }
+    .dark-theme #search-bar input {
+        border: 1px solid #3a322e; /* Dark mode border */
+        background: #2a2420; /* Dark mode input background */
+        color: #f0e6db;
+    }
+
+    #search-bar button {
+        padding: 5px 10px;
+        background-color: #1e1e1e; /* Light mode button */
+        color: #f5f0ea;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    #search-bar button:hover {
+        background-color: #3a3a3a; /* Light mode hover */
+    }
+    .dark-theme #search-bar button {
+        background-color: #f0e6db; /* Dark mode button */
+        color: #2a2420;
+    }
+    .dark-theme #search-bar button:hover {
+        background-color: #d8c6b8; /* Dark mode hover */
+        color: #2a2420;
+    }
+    .dark-theme .slide {
+  background-image: url("./images/dark.png") !important;
+}
+
+
+
+/* TỔNG HỢP: MÀU NỀN VÀ LOGO CHO LIGHT MODE */
+
+/* Nền Light Mode: Chuyển sang màu Be (#f0e6db) */
+body {
+  background-color: #f0e6db; 
+  color: black;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Màu chữ slide: Chuyển sang màu Be (#f0e6db) cho tiêu đề/mô tả/nút */
+.slide-details h1, 
+.slide-details p, 
+.explore-more {
+    color: #f0e6db !important; 
+} 
+
+/* Chuyển đổi Logo: ẨN logo Dark Mode mặc định */
+.dark-logo {
+    display: none !important;
+}
+
+.light-logo {
+    display: block !important; 
+}
+
+/* TỔNG HỢP: MÀU NỀN, MÀU CHỮ VÀ LOGO CHO DARK MODE */
+
+/* Nền Dark Mode: Chuyển sang Nâu nhạt hơn (ví dụ: #4b423f) */
+.dark-theme {
+    background-color: #4b423f; /* Màu nâu nhạt hơn */
+    color: #f0e6db; 
+}
+
+/* Màu chữ slide: Chuyển sang Nâu Đậm (#4e342e) khi ở Dark Mode */
+.dark-theme .slide-details h1, 
+.dark-theme .slide-details p, 
+.dark-theme .explore-more {
+    color: #4e342e !important; 
+}
+
+/* Chuyển đổi Logo: HIỆN logo Dark Mode, ẨN logo Light Mode */
+.dark-theme .light-logo {
+    display: none !important; 
+}
+
+.dark-theme .dark-logo {
+    display: block !important; 
+}
+
+/* Tinh chỉnh Icon: Đổi màu icon sang màu sáng (#f0e6db) */
+.dark-theme .theme-icon, 
+.dark-theme .fa-solid, 
+.dark-theme .fa-regular {
+    color: #f0e6db !important; 
+}
+
+
+
+/* LIGHT MODE: Ẩn ảnh Dark Mode (là con cuối cùng) */
+.bg-image img:last-child {
+    display: none !important;
+}
+
+/* HIỆN ảnh Light Mode (là con đầu tiên) */
+.bg-image img:first-child {
+    display: block !important; 
+}/* DARK MODE: Ẩn ảnh sáng (con đầu tiên), hiện ảnh tối (con cuối cùng) */
+.dark-theme .bg-image img:first-child {
+    display: none !important; 
+}
+
+.dark-theme .bg-image img:last-child {
+    display: block !important; 
+}
+
+
+
+/* LIGHT MODE: Ẩn ảnh Dark Mode (là con cuối cùng) */
+.bg-image img:last-child {
+    display: none !important;
+}
+
+/* HIỆN ảnh Light Mode (là con đầu tiên) */
+.bg-image img:first-child {
+    display: block !important; 
+}/* DARK MODE: Ẩn ảnh sáng (con đầu tiên), hiện ảnh tối (con cuối cùng) */
+.dark-theme .bg-image img:first-child {
+    display: none !important; 
+}
+
+.dark-theme .bg-image img:last-child {
+    display: block !important; 
+}
+
+
+
+
+/* LIGHT MODE: Ẩn ảnh Dark Mode (con cuối cùng) trong Category */
+.cat-img img:last-child {
+    display: none !important;
+}
+
+/* HIỆN ảnh Light Mode (con đầu tiên) */
+.cat-img img:first-child {
+    display: block !important; 
+}/* DARK MODE: Ẩn ảnh sáng (con đầu tiên), hiện ảnh tối (con cuối cùng) trong Category */
+.dark-theme .cat-img img:first-child {
+    display: none !important; 
+}
+
+.dark-theme .cat-img img:last-child {
+    display: block !important; 
+}
+
+
+
+
+
+
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // Get the search icon and search bar elements
+        const searchIcon = document.getElementById("search-icon"); 
+        const searchBar = document.getElementById("search-bar");
+
+        // Toggle the visibility of the search bar when the icon is clicked
+        searchIcon.onclick = function() {
+            if (searchBar.style.display === "none" || searchBar.style.display === "") {
+                searchBar.style.display = "block";  // Show the search bar
+                searchBar.querySelector('input').focus(); // Automatically focus on the input field
+            } else {
+                searchBar.style.display = "none";  // Hide the search bar
+            }
+        }
+
+        // Search button functionality
+        const searchBtn = document.getElementById("search-btn");
+        searchBtn.onclick = function() {
+            var query = document.getElementById('search').value;
+            if(query) {
+                console.log("Search query:", query);
+                // Implement your search logic here, such as a redirect or an API call
+                // window.location.href = '/search-results?q=' + encodeURIComponent(query);
+
+                // Hide the search bar after clicking "Go"
+                searchBar.style.display = "none";
+            } else {
+                console.log("No search query entered");
+            }
+        }
+        const toggleBtn = document.getElementById("modeToggle")
+        toggleBtn.onclick = () => {
+            const sun = document.querySelector(".sun-icon")
+            const moon = document.querySelector(".moon-icon")
+            //moon.style.display = "grid";
+            sun.classList.toggle("hidden");
+            moon.classList.toggle("hidden");
+
+            document.body.classList.toggle("dark-theme");
+        }
+        (function() {
+    let headerVisible = false;
+    document.getElementById("menu").addEventListener("click", function () {
+        if (headerVisible === false) {
+            document.getElementById("header").style.height = "290px";
+            headerVisible = true;
+        } else {
+            document.getElementById("header").style.height = "50px";
+            headerVisible = false;
+        }
+    });
+
+    // Show "Go to Top" button and sticky header
+    const goTopBtn = document.querySelector(".gotopbtn");
+    const header = document.getElementById("header");  // Thêm: Lấy element header
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+            goTopBtn.style.display = "block";
+        } else {
+            goTopBtn.style.display = "none";
+        }
+
+        // Thêm: Toggle sticky khi scroll
+        if (window.scrollY > 0) {  // Sticky ngay khi scroll xuống
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+    });
+})();
+    });
+</script>
+ <!-- banner area  -->
+    <section class="banner">
+
+        <div class="slide">
+
+            <div class="slide-details" data-aos="fade-up" data-aos-easing="ease-in-out">
+                <h1><p>Create Your Signature Look with MND Fashion.</p></h1>
+                <p>
+                    Discover designs redefining sophistication and let your style speak before you do.
+                </p>
+                <button class="btn">
+                    Explore More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pop up Html  -->
+         <!-- Pop-up for email registration -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <div class="popup-left">
+                <img src="images/Thiết kế chưa có tên (92).png" alt="Fashion Image">
+            </div>
+            <div class="popup-right">
+                <a href="#" class="no-thanks"><img class="popuplogo" src="images/logolight.png" alt="Logo" srcset=""></a>
+                <h1>Join MND Fashion!</h1>
+
+                <h2 class="popuph2">Unlock Your Fashion</h2>
+                <p>Sign up now to enjoy <strong> 20% off </strong> your first order and exclusive updates on the latest trends.</p>
+                <form id="emailForm">
+                    <input type="email" id="popup-email" placeholder="Enter your email" required>
+                    <button type="submit" class="signup-btn">Continue</button>
+                </form>
+                <a href="#" class="no-thanks close-btn">No thanks, I’ll shop full price</a>
+                <p class="terms">By signing up, you agree to our <a href="terms-conditions.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- featured section  -->
+
+    <section class="featured" data-aos="fade-left" data-aos-delay="300">
+        <div class="featured-box-1">
+            <div class="overlay">
+                <a href="./shopclothing.html" class="btn btn-white">
+                    Shop Clothing
+                </button></a>
+            </div>
+            <div class="bg-image">
+                <img src="./images/youngcouple-light.png" alt="product">
+                <img src="./images/youngcouple-dark.png" alt="product">
+            </div>
+        </div>
+
+        <div class="featured-box-2">
+            <div class="featured-box-2-box-1">
+                <div class="overlay">
+                    <a href="./products/sunglasses.html" class="btn btn-white">
+                        Shop Sunglasses
+                    </a>
+                </div>
+                <div class="bg-image">  
+                      <img src="./images/shop-glasses.png" alt="product">
+    
+                    <img src="./images/shop-glasses-dark.png" alt="product">
+                </div>
+            </div>
+            <div class="featured-box-2-box-2">
+                <div class="overlay">
+                    <a href="./products/bags.html" class="btn btn-white">
+                        Shop Bags
+                    </a>
+                </div>
+                <div class="bg-image">
+                    <img src="./images/shop-bags.png" alt="product">
+                    <img src="./images/shop-bags-dark.png" alt="product">
+                </div>
+            </div>
+
+            <div class="featured-box-2-box-3">
+                <div class="overlay">
+                    <a href="./products/sandals.html" class="btn btn-white">
+                        Shop 
+                    </a>
+                </div>
+                <div class="bg-image">
+                    
+                    <img src="./images/shop-sandals.png" alt="product">
+                    <img src="./images/shop-sandals-dark.png" alt="product">
+                </div>
+            </div>
+        </div>
+
+        <div class="featured-box-3">
+            <div class="overlay">
+                <a href="sneaker.html" class="btn btn-white">
+                    Shop Sneakers
+                </a>
+                
+            </div>
+            <div class="bg-image">
+                <img src="./images/shop-sneakers.png" alt="product">
+                <img src="./images/shop-sneakers-dark.png" alt="product">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- products section  -->
+
+    <section class="products">
+        <h1 class="section-title">Top Products Of The Season!</h1>
+
+        <div class="products-list">
+
+            <div class="product" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-image">
+                    <div class="main-image">
+                        <img src="./images/man-dark-hover.png" alt="product">
+                    </div>
+                    <div class="effect-image">
+                        <img src="./images/man-dark-normal.png" alt="product">
+                    </div>
+                    <div class="overlay-image"> 
+                        <button class="heartbtn" id="heart">
+                            &#10084;
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="product-details">
+                    <p class="product-name">Midnight Executive Suit</p>
+                    <p class="product-price">- $249</p> 
+                </div>
+
+            </div>
+
+            <div class="product" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="product-image">
+
+                    <div class="main-image">
+                        <img src="./images/product2.png" alt="product">
+                    </div>
+                    <div class="effect-image">
+                        <img src="./images/product2-effect.png" alt="product">
+                    </div>
+                    <div class="overlay-image">
+                        <button class="heartbtn" id="heart">
+                            &#10084;
+                        </button>
+                    </div>
+
+
+                </div>
+
+                <div class="product-details">
+                    <p class="product-name">Caramel Blazer Set</p>
+                    <p class="product-price">- $199</p> 
+                </div>
+
+            </div>
+
+
+            <div class="product" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="product-image">
+
+                    <div class="main-image">
+                        <img src="./images/product3-effect.png" alt="product">
+                    </div>
+                    <div class="effect-image">
+                        <img src="./images/product3.png" alt="product">
+                    </div>
+                    <div class="overlay-image">
+                        <button class="heartbtn" id="heart">
+                            &#10084;
+                        </button>
+                    </div>
+
+
+                </div>
+
+                <div class="product-details">
+                    <p class="product-name">Mocha Chic Blazer</p>
+                    <p class="product-price">- $150</p> 
+                </div>
+
+            </div>
+
+            <div class="product" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="product-image">
+
+                    <div class="main-image">
+                        <img src="./images/whitetshirtmen.png" alt="product">
+                    </div>
+                    <div class="effect-image">
+                        <img src="./images/whitetshirtmeneffect.png" alt="product">
+                    </div>
+                    <div class="overlay-image">
+                        <button class="heartbtn" id="heart">
+                            &#10084;
+                        </button>
+                    </div>
+
+
+                </div>
+
+                <div class="product-details">
+                    <p class="product-name">Regal Navy </p>
+                    <p class="product-price">- $250</p> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- category section  -->
+
+    <section class="categories">
+
+        <div class="category" data-aos="zoom-in" data-aos-delay="200">
+
+            <div class="cat-img">
+                <img src="./images/category1.png" alt="category">
+    
+                <img src="./images/category1-dark.png" alt="category">
+            </div>
+
+            <div class="product-details">
+                <p class="product-name">Shadow Edge Shades – $89</p>
+            </div>
+
+        </div>
+
+        <div class="category" data-aos="zoom-in" data-aos-delay="200">
+
+            <div class="cat-img">
+                <img src="./images/category2.png" alt="category">
+    
+                <img src="./images/category2-dark.png" alt="category">
+            </div>
+
+            <div class="product-details">
+                <p class="product-name">Ivory Luxe Bag – $159</p>
+            </div>
+        </div>
+
+        <div class="category" data-aos="zoom-in" data-aos-delay="200">
+            <div class="cat-img">
+                  <img src="./images/category3.png" alt="category">
+    
+                <img src="./images/category3-dark.png" alt="category">
+            </div>
+            <div class="product-details">
+                <p class="product-name">Urban Slide Sandals – $95</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- products section 2 -->
+    <section class="products">
+        <h1 class="section-title">Most Bought Products Of The Month!</h1>
+
+        <div class="products-list">
+
+            <div class="product" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="product-image">
+
+                    <div class="main-image">
+                        <img src="./images/product5.png" alt="product">
+                    </div>
+                    <div class="effect-image">
+                        <img src="./images/product5-effect.png" alt="product">
+                    </div>
+                    <div class="overlay-image">
+                        <button class="heartbtn" id="heart">
+                            &#10084;
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-details">
+                    <p class="product-name">Navy Royal Suit</p>
+                    <p class="product-price">- $250</p> 
+                </div>
+            </div>
+
+            <div class="product" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="product-image">
+
+                    <div class="main-image">
+                        <img src="./images/product6.png" alt="product">
+                    </div>
+                    <div class="effect-image">
+                        <img src="./images/product6-effect.png" alt="product">
+                    </div>
+                    <div class="overlay-image">
+                        <button class="heartbtn" id="heart">
+                            &#10084;
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-details">
+                    <p class="product-name">Noir Muse </p>
+                    <p class="product-price">- $170</p> 
+                </div>
+
+            </div>
+
+            <div class="product" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="product-image">
+                    <div class="main-image">
+                        <img src="./images/tealimageshirtmen.png" alt="product">
+                    </div>
+                    <div class="effect-image">
+                        <img src="./images/tealshirtmeneffect.png" alt="product">
+                    </div>
+                    <div class="overlay-image">
+                        <button class="heartbtn" id="heart">
+                            &#10084;
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-details">
+                    <p class="product-name">Classic Oxford Loafers  </p>
+                    <p class="product-price">- $139</p> 
+                </div>
+            </div>
+
+            <div class="product" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="product-image">
+                    <div class="main-image">
+                        <img src="./images/product8.png" alt="product">
+                    </div>
+                    <div class="effect-image">
+                        <img src="./images/product8-effect.png" alt="product">
+                    </div>
+                    <div class="overlay-image">
+                        <button class="heartbtn" id="heart">
+                            &#10084;
+                        </button>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <p class="product-name">Amber Grace Tote </p>
+                    <p class="product-price">- $159</p> 
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- shop from insta section  -->
+
+
+
+
+
+
+
+
+    
+    <section class="insta">
+        <h1 class="section-title">Shop From The Gram</h1>
+        <div class="posts">
+            <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fa-brands fa-instagram"></i>
+                <img src="./images/1..webp" alt="insta">
+            </div>
+            <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fa-brands fa-instagram"></i>
+                <img src="./images/2.webp" alt="insta">
+            </div>
+            <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fa-brands fa-instagram"></i>
+                <img src="./images/3.webp" alt="insta">
+            </div>
+            <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fa-brands fa-instagram"></i>
+                <img src="./images/4.webp" alt="insta">
+            </div>
+            <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fa-brands fa-instagram"></i>
+                <img src="./images/5.webp" alt="insta">
+            </div>
+            <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fa-brands fa-instagram"></i>
+                <img src="./images/6.webp" alt="insta">
+            </div>
+        </div>
+        <div class="feedback-container">
+        
+            <h2>Have feedback?&nbsp;<a href="feedback.html" target="_blank"><span>Click here</span></a> to share your thoughts with us.</h2>
+        </div>
+    </section>
+    
+    
+    <!-- footer section  -->
+    <footer class="footer">
+
+        <div class="footer-section">
+
+            <h1>Contact Us</h1>
+            <ul class="footer-list">
+                <li>minhnguyendieugmail.com</li>
+                <li>
+                    193 Đỗ Văn Thi, Hiệp Hoà, Biên Hòa, Đồng Nai 76126, Việt Nam
+                </li>
+                <li>0383270448</li>
+
+                <li class="border-list">
+                </li>
+                <li class="socials">
+                    <a href="" id="linkedin" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="" id="github" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="" id="twitter" target="_blank">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="" id="instagram" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        
+    <script>
+          // Function to get the count from localStorage or initialize it
+    function getVisitorCount() {
+    return localStorage.getItem('visitorCount') || 0;
+    }
+
+    // Function to increment and save the count
+    function incrementVisitorCount() {
+    let count = parseInt(getVisitorCount()) + 1;
+    localStorage.setItem('visitorCount', count);
+    return count;
+    }
+
+    // Function to display the count
+    function displayVisitorCount() {
+    const counterElement = document.querySelector('.website-counter');
+    const count = incrementVisitorCount();
+    counterElement.textContent = count;
+    }
+
+    // Call the display function when the page loads
+    document.addEventListener('DOMContentLoaded', displayVisitorCount);
+    </script>
+
+        <div class=" footer-section quick-links ">
+           
+
+
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h1>Subscribe to Newsletter</h1>
+            <ul class="footer-list">
+                <li>Be the first to know about exclusive deals and new arrivals straight to your inbox.</li>
+                <li>Join our fashion community today!</li>
+                <li class="sub">
+                    <input type="email" placeholder="Enter your email here" id="email-input">
+                    <button class="btn" id="open-btn">Subscribe</button>
+                </li>
+            </ul>
+        </div>
+
+    </footer>
+        
+        <div class="footer-copyright">
+            <div id="copyright">&copy; <span id="year"></span> MND Fashion. All Rights Reserved.</div>
+        </div>
+        
+        <script>
+            const currentYear = new Date().getFullYear();
+            document.getElementById('year').textContent = currentYear;
+        </script>
+        
+        <div class="modal-box" id="modalbox" style="display: none;">
+            <div class="modal" id="modal">
+                <div id="close-btn">&times;</div>
+                <div class="modal-content">
+                    <img src="images\confirmation.png" alt="" height="100px" >
+                    <h2>Subscription Successful!</h2>
+                    <p>Thank you for subscribing.</p>
+                    <p> You will receive notifications, updates via email.</p>
+                </div>
+              
+            </div>
+        </div>
+    <script src="./script/modal_box.js"></script>
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- ProgressBar Functionality -->
+    <script src="script/progressbar.js"></script>
+<script>
+    gsap.from("#header", {
+        duration: 1.5,
+        y: -100,
+        opacity: 0,
+        ease: "power4.out",
+        stagger: 1,
+    });
+
+    gsap.from(".nav-link", {
+        duration: 1,
+        opacity: 0,
+        y: 20,
+        delay: 0.5,
+        stagger: 0.2,
+        ease: "power3.out"
+    });
+
+    gsap.from("h1", {
+        duration: 1,
+        opacity: 0,
+        y: 50,
+        delay: 0.7,
+        stagger: 0.2,
+        ease: "power3.out"
+    });
+
+    gsap.from("p", {
+        duration: 1.5,
+        opacity: 0,
+        y: 30,
+        delay: 0.9,
+        stagger: 0.3,
+        ease: "power2.out"
+    });
+
+    gsap.from(".btn", {
+        duration: 1,
+        scale: 0.8,
+        opacity: 0,
+        delay: 1.2,
+        ease: "back.out(1.7)",
+        stagger: 0.2
+    });
+
+    gsap.from("img", {
+        duration: 1.5,
+        opacity: 0,
+        scale: 0.9,
+        delay: 1.5,
+        stagger: 0.3,
+        ease: "elastic.out(1, 0.3)"
+    });
+
+    gsap.from(".overlay", {
+        duration: 1,
+        opacity: 0,
+        y: 50,
+        delay: 1.7,
+        stagger: 0.3,
+        ease: "power3.out"
+    });
+
+    gsap.from(".footer-section", {
+        scrollTrigger: ".footer",
+        duration: 1.5,
+        opacity: 0,
+        y: 50,
+        ease: "power2.out",
+        stagger: 0.3,
+    });
+
+    
+    gsap.from(".socials i", {
+        scrollTrigger: ".footer",
+        duration: 1,
+        opacity: 0,
+        scale: 0.5,
+        ease: "bounce.out",
+        stagger: 0.2,
+        delay: 0.5
+    });
+</script>
+
+<script>const tabs = document.querySelectorAll('.tab');
+    const cursor = document.getElementById('cursor');
+    
+    tabs.forEach(tab => {
+ 
+        tab.addEventListener('mouseenter', () => {
+            cursor.style.width = `${tab.offsetWidth}px`; // Set width to the current tab's width
+            cursor.style.left = `${tab.offsetLeft}px`; // Move cursor to the current tab's position
+ 
+       
+ 
+            cursor.style.opacity = 1; 
+        });
+    
+        tab.addEventListener(' mouseleave', () => {
+            cursor.style.opacity = 0; 
+        });
+    });
+    
+  </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  (function() {
+      let headerVisible = false;
+      document.getElementById(" menu").addEventListener("click", function () {
+          if (headerVisible === false) {
+              document.getElementById(" header").style.height = "290px";
+              headerVisible = true;
+          } else {
+              document.getElementById(" header").style.height = "50px";
+              headerVisible = false;
+          }
+      });
+
+      // Show "Go to Top" button after scrolling down
+      const goTopBtn = document.querySelector(" .gotopbtn");
+      window.addEventListener(" scroll", function () {
+          if (window.scrollY > 200) {  // Show the button after scrolling down 200px
+              goTopBtn.style.display = "block";
+          } else {
+              goTopBtn.style.display = "none";
+          }
+      });
+
+  })();  // IIFE to avoid polluting global scope
+
+  
+        // When the cart icon is clicked, navigate to the 'cart.html' page.
+document.getElementById("cart-icon").addEventListener("click", function() {
+    window.location.href = "cart.html";
+});
+
+  
+</script>
+
+<div class="gtranslate_wrapper"></div>
+        <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+<script>
+
+    window.addEventListener('scroll', function() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progress-bar').style.width = scrolled + '%';
+    });
+    </script>
+
+<script src="./script/popup.js"></script>
+<button id="scrollToTopBtn" class="scroll-top" aria-label="Scroll to top">
+    <div class="scroll-top-icon">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+    <svg class="progress-ring" width="60" height="60">
+        <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="4" fill="transparent" r="28" cx="30"
+            cy="30"></circle>
+    </svg>
+</button>
+<style>
+    .scroll-top {
+        position: fixed;
+        right: 1.6%;
+        background: linear-gradient(100deg, #1ca6f0, #3c7aff, #05deff);
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        overflow: visible;
+        z-index: 10;
+        bottom: 15px;
+        /* Ensure button is on top */
+    }
+
+    .scroll-top.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .scroll-top:hover {
+        transform: scale(1.1);
+        /* Subtle scaling instead of expanding */
+        box-shadow: 0 8px 20px rgba(255, 69, 159, 0.6);
+        /* Slightly larger shadow */
+    }
+
+    .scroll-top:active {
+        transform: scale(1.05);
+        /* Minor scale reduction on click */
+    }
+
+    .scroll-top-icon {
+        position: relative;
+        z-index: 2;
+        transition: transform 0.3s ease;
+    }
+
+    .scroll-top:hover .scroll-top-icon {
+        transform: translateY(-3px);
+    }
+
+    /* Progress Ring Styling */
+    .progress-ring {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+        /* To start from the top */
+    }
+
+    .progress-ring__circle {
+        transition: stroke-dashoffset 0.35s;
+        transform-origin: 50% 50%;
+    }
+
+    /* Pulse Animation */
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        }
+        50% {
+            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.7);
+        }
+
+        100% {
+            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        }
+    }
+
+    .scroll-top:hover {
+        animation: pulse 1.5s infinite;
+    }
+
+    .scroll-top.show {
+        animation: none;
+        /* No animation when showing the button */
+    }
+
+    .scroll-top.show:hover {
+        animation: pulse 1.5s infinite;
+        /* Pulse on hover */
+    }
+</style>
+<script>
+    // Get the button
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    const progressCircle = document.querySelector(".progress-ring__circle");
+    const radius = progressCircle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+
+    // Set the circle progress properties
+    progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+    progressCircle.style.strokeDashoffset = circumference;
+
+    // Function to show or hide the button based on scroll position
+    function toggleScrollButton() {
+        if (window.scrollY > 100) {
+            scrollToTopBtn.classList.add("show");
+        } else {
+            scrollToTopBtn.classList.remove("show");
+        }
+    }
+
+    // Function to set the scroll progress on the button ring
+    function setProgress(percent) {
+        const offset = circumference - (percent / 100) * circumference;
+        progressCircle.style.strokeDashoffset = offset;
+    }
+
+    // Listen for scroll events to update button visibility and progress
+    window.addEventListener("scroll", () => {
+        toggleScrollButton();
+        const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        setProgress(scrollPercent);
+    });
+
+    // Smooth scroll to top when the button is clicked
+    scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+  </script>
+</body>
+<style>
+    * {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* creating font face  */
+
+@font-face {
+  font-family: "futura";
+  src: url("./fonts/futura/futura\ medium\ bt.ttf");
+}
+
+/* Scroll Progress Bar*/
+#progress-container {
+  position: fixed ;
+  top: 1px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  z-index: 99990;
+  /* background: #f3f3f3; */
+}
+
+#progress-bar {
+  position: fixed;
+  top: 0.3px;
+  left: 0;
+  width: 0%;
+  height: 6px;
+  width: 0;
+  background: linear-gradient(90deg, rgba(27, 27, 27, 0.762) 0%, rgb(61, 61, 61) 50%, rgba(38, 38, 38, 0.679) 100%);
+  box-shadow: 0 0 4px rgba(255, 244, 221, 0.7), 0 0 10px rgba(255, 255, 255, 0.496);
+  transition: width 0.09s ease-in-out;
+  /* border-radius: 10px; */
+}
+.gotopbtn {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background: black;
+  bottom: 40px;
+  right: 50px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  border-radius: 50%;
+  font-size: 22px;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.modal-box {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  z-index: 1000; /* Ensure it appears on top */
+}
+.modal {
+  height: 460px;
+  width: 370px;
+  background-color: #fff;
+  border-radius: 6px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  animation-name: animatemodal;
+  animation-duration: 0.5s;
+  box-shadow: 8px 8px 25px black;
+}
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 15px;
+  padding: 15px 20px;
+}
+.modal-content p {
+  align-self: center;
+}
+#close-btn {
+  font-size: 1.5rem;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+@keyframes animatemodal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+/* header css  */
+
+.header {
+  height: 70px;
+  width: 100%;
+  padding: 0px 2%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sticky{
+  height: 70px;
+  width: 100%;
+  padding: 0px 2%;
+  position: fixed;
+  top: 0px;
+  z-index: 1000;
+  background-color: rgb(248,247,247);
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 12%;
+  height: 70px;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "futura";
+  font-weight: bold;
+  font-size: 25px;
+}
+.logo img {
+  height: 65px;
+  width: 80px;
+}
+
+.border {
+  position: relative;
+  font-size: 0.85rem;
+  color: black;
+  border-radius: 50px;
+}
+
+.border:hover {
+  display: flex;
+  /* color: white !important; */
+  /* text-decoration: underline; */
+  border-radius: 50px;
+  transition: color 0.3s ease-in;
+  text-align: center;
+  height: 40px;
+  background-color: #14171a;
+  font-weight: 500;
+}
+.border > a:hover {
+  color: white !important;
+}
+
+.navigation {
+  width: 45%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  /* background-color: blue; */
+}
+.nav-links {
+  width: 120%;
+  height: 70px;
+  /* background-color: yellow; */
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  justify-content: space-evenly;
+  white-space: nowrap;
+  padding: 20px;
+  font-family: "futura";
+  font-size: 17px;
+  /* color: #1d1d1d; */
+}
+
+.nav-links > .nav-link {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links > .nav-link > a {
+  color: #1d1d1d;
+  text-decoration: none;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* width: 85px; */
+}
+
+/* .nav-link>a:hover{
+    color: white;
+} */
+
+.nav-links > .nav-link > i {
+  font-size: 20px;
+}
+
+/* navbar active ----------------*/
+.tab a.active {
+  background-color: black;
+  color: white;
+  padding: 10px px; /* Add padding if needed */
+  border-radius: 30px; /* Add border-radius for rounded corners if desired */
+}
+
+
+
+.utils {
+  width: 8%;
+  height: 70px;
+  margin-right: 45px;
+  /* background-color: purple; */
+}
+
+/* banner css  */
+
+.banner {
+  width: 100%;
+  height: 750px;
+  background-color: gray;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/Light.png");
+  background-size: cover;
+  display: flex;
+  align-items: right;
+  padding-left: 20%;
+  
+}
+
+.slide-details {
+  width: 27%;
+  padding: 40px;
+  /* background-color: red; */
+  font-family: "futura";
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 25px;
+}
+
+.slide-details > h1 {
+  font-size: 60px;
+}
+
+.btn {
+  padding: 12px 30px;
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+.btn:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.1);
+}
+/* Container for the buttons */
+.button-container {
+  display: flex;
+  align-items: center;
+  position: relative; 
+}
+
+.star{
+  margin: 10px;
+}
+.checked{
+   color: orange;
+}
+
+
+/* Add to Cart Button */
+.add-to-cart {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  width: 100%;
+}
+
+.add-to-cart:hover,
+.share-icon:hover,
+.save-icon:hover {
+  background-color: #333;
+}
+
+/* Save Icon */
+.save-icon {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  padding: 9.2px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.save-icon.active {
+  color: rgb(240, 56, 56);
+}
+
+/* Share Icon */
+.share-icon {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  padding: 9.2px;
+  cursor: pointer;
+  font-size: 16px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+/* Initially hidden */
+.share-options {
+  position: absolute;
+  top: -389%;
+  left: 60%;
+  width: 110px;
+  height: 145px;
+  transform-origin: bottom left;
+  background: rgba(15, 15, 15, 0.5);
+  color: white;
+  padding: 15px;
+  font-family: "roboto";
+  transition: 0.5s ease-in-out;
+  border-radius: 13px;
+  border-bottom-left-radius: 0px;
+  opacity: 0; /* Hide it initially */
+  pointer-events: none; /* Disable interaction when invisible */
+  visibility: hidden; /* Hide from view */
+  transform: scale(0.8);
+  z-index: 10;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+/* When active (visible) */
+.share-options.active {
+  opacity: 1; /* Show it */
+  pointer-events: auto; /* Enable interaction */
+  visibility: visible; /* Make it visible */
+  transform: scale(1); /* Restore size */
+  transition-delay: 0s; /* No delay on activation */
+}
+
+/*adding quick share socials */
+.whatsapp-icon,
+.facebook-icon,
+.instagram-icon,
+.twitter-icon {
+  font-size: 22px;
+  cursor: pointer;
+  margin: 1px 5px;
+  border-radius: 40px;
+}
+.whatsapp-icon:hover {
+  color: #128c7e;
+}
+.facebook-icon:hover {
+  color: #365899;
+}
+.instagram-icon:hover {
+  color: #e1306c;
+}
+/* Container for the link and copy button */
+.link-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  max-width: 400px;
+  margin: 10px 0;
+}
+/* Link text styling */
+.link {
+  margin: 0;
+  font-size: 13px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Copy button styling */
+.copy-btn {
+  background-color: #bfc0c1;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 13px;
+}
+.copy-btn:hover {
+  background-color: #4f4f50;
+}
+
+/* featured section css  */
+
+.featured {
+  width: 100%;
+  padding: 10px 0px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.featured-box-1 {
+  width: 33%;
+  height: 570px;
+  /* background-color: green; */
+  position: relative;
+}
+
+.featured-box-2 {
+  width: 33%;
+  height: 570px;
+  /* background-color: purple; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.featured-box-2-box-1 {
+  width: 100%;
+  height: 280px;
+  /* background-color: green; */
+  position: relative;
+}
+
+.featured-box-2-box-2 {
+  width: 49.5%;
+  height: 280px;
+  /* background-color: green; */
+  position: relative;
+}
+
+.featured-box-2-box-3 {
+  width: 49.5%;
+  height: 280px;
+  /* background-color: green; */
+  position: relative;
+}
+
+.featured-box-3 {
+  width: 33%;
+  height: 570px;
+  /* background-color: green; */
+  position: relative;
+}
+
+.bg-image {
+  width: 100%;
+  height: 100%;
+  /* background-color: yellow; */
+  overflow: hidden;
+}
+
+.bg-image > img {
+  width: 100%;
+  transition: 0.2s;
+}
+
+.featured-box-1:hover img,
+.featured-box-3:hover img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  /* background-color: green; */
+  position: absolute;
+  display: flex;
+  padding: 5%;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.btn-white {
+  font-family: futura;
+  font-weight: 550;
+  background-color: rgb(82, 80, 80);
+  border: 1px solid rgb(184, 183, 183);
+  color:rgb(250, 241, 241);
+  box-shadow: 0 0 3px rgb(201, 201, 201);
+  z-index: 20;
+  transition: 0.3s ease;
+}
+.btn-white:hover {
+  background-color: black;
+  color: white;
+}
+.btn-white {
+  text-decoration: none;
+}
+
+.featured-box-1:hover img,
+.featured-box-3:hover img,
+.featured-box-2-box-1:hover img,
+.featured-box-2-box-2:hover img,
+.featured-box-2-box-3:hover img {
+  transform: scale(1.1);
+}
+
+/* products css  */
+
+.products {
+  width: 100%;
+  padding: 30px 20%;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+}
+
+.section-title {
+  font-family: "futura";
+}
+
+.products-list {
+  width: 100%;
+  padding: 20px 0px;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.product {
+  width: 24.5%;
+  height: 390px;
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  font-family: futura;
+  font-size: 17px;
+}
+
+.product:hover .main-image {
+  transform: scale(1.2);
+  opacity: 0;
+}
+
+.product:hover .effect-image {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.product:hover .overlay-image {
+  margin-top: 0px;
+}
+
+.product-image {
+  height: 370px;
+  width: 100%;
+  /* background-color: blue; */
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  /* background-color: purple; */
+  position: absolute;
+  transition: 0.3s;
+}
+
+.effect-image {
+  width: 100%;
+  height: 100%;
+  /* background-color: cyan; */
+  position: absolute;
+  opacity: 0;
+  transform: scale(1.2);
+  transition: 0.6s;
+  /* display: none; */
+}
+
+.overlay-image {
+  width: 100%;
+  height: 100%;
+  /* background-color: brown; */
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  padding: 5%;
+  margin-top: 100px;
+  transition: 0.35s;
+  /* display: none; */
+}
+
+#heart {
+  font-size: 2.5em;
+  box-shadow: none;
+  padding: 1.5px;
+  background: transparent;
+  border: none;
+}
+
+.heartbtn {
+  background-color: white;
+  border: 1px solid white;
+  color: #1d1d1d;
+  box-shadow: 0 0 3px lightgray;
+  z-index: 20;
+  transition: 0.3s ease;
+}
+
+.heartbtn:hover {
+  background-color: black;
+  color: rgb(255, 84, 84);
+  transform: scale(1.1);
+}
+
+.product-details {
+  padding: 0px 5px 5px;
+  display: flex;
+  flex-direction: column;
+  font-family: "futura";
+}
+
+.product-name {
+  font-weight: 500;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.product-price {
+  color: rgb(63, 61, 61);
+  text-align: center;
+  font-size: 1em;
+}
+
+/* categories section  */
+
+.categories {
+  width: 100%;
+  padding: 30px 20%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.category {
+  width: 33%;
+  /* background-color: yellow; */
+}
+
+.cat-img {
+  width: 100%;
+  height: 400px;
+  /* background-color: blue; */
+  overflow: hidden;
+}
+
+.cat-img > img {
+  width: 100%;
+  transition: 0.2s;
+}
+
+.category:hover img {
+  transform: scale(1.3);
+}
+
+/* shop from insta section css */
+
+.insta {
+  width: 100%;
+  /* height: auto; */
+  padding: 30px 20%;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+}
+
+.posts {
+  width: 100%;
+  padding: 20px 0px;
+  gap: 0.5rem;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-image {
+  object-fit:cover;
+  position: relative;
+  /* background-color: green; */
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.post-image img {
+  width: 100%;
+  transition: 0.3s;
+}
+
+.post-image:hover img {
+  transform: scale(1.1);
+}
+
+.post-image i {
+  position: absolute;
+  font-size: 25px;
+  font-weight: 500;
+  margin-right: 10px;
+  margin-top: 10px;
+  z-index: 20;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.post-image i:hover {
+  color: #db0a50;
+  transition: color 0.3s ease;
+}
+
+
+.feedback-container h2{
+  font-size: 1.2rem;
+}
+.feedback-container h2 span{
+  color: rgba(0, 0, 164, 0.663);
+} 
+.feedback-container h2 span:hover{
+  color: darkblue;
+} 
+
+.footer {
+  width: 100%;
+  padding: 40px 100px;
+  background-color: #f6f5fa;
+  font-family: "futura";
+  display: flex;
+  justify-content: space-between;
+  color: #1d1d1d;
+}
+
+.footer-section {
+  /* background-color: red; */
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.footer-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.footer-list li a {
+  color: black;
+  text-decoration: none;
+  margin-bottom: 25px;
+  font-size: 22px;
+  position: relative;
+
+}
+
+.border-list {
+  margin-top: 20px;
+  border-top: 1px solid lightgray;
+  width: 70%;
+}
+
+.socials {
+  margin-top: 20px;
+  display: flex;
+  font-size: 20px;
+  column-gap: 30px;
+}
+
+.socials a {
+  transition: all 0.38s ease;
+  color: black;
+}
+
+.socials a:hover {
+  color: white;
+  transform: scale(1.2);
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+#github:hover {
+  background-color: #3a383c;
+}
+
+#linkedin:hover {
+  background-color: #0a66c2;
+}
+
+#instagram:hover {
+  background-color: #e1306c;
+}
+
+#twitter:hover {
+  background-color: #14171a;
+}
+
+
+.visitor-counter {
+  position: absolute;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  top: 3650px;
+  padding: 10px 20px;
+  border-radius: 19px;
+  display: inline-flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  margin-left: 0px;
+  z-index: 10; /* Ensure it stays on top of the border */
+}  
+
+.visitor-counter .icon {
+  margin-right: 10px;
+}
+
+
+
+
+
+
+.quick-links .footer-list a {
+    position: relative; 
+}
+
+.quick-links .footer-list a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: black; 
+    transition: width 0.3s ease; 
+}
+
+.quick-links .footer-list a:hover::after {
+    width: 100%;
+}
+
+.sub {
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sub input {
+  height: 40px;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 30px;
+  border: 1px solid lightgray;
+  padding: 0 15px;
+  margin-bottom: 10px;
+}
+
+.sub .btn {
+  width: auto;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.sub .btn:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* Adds a subtle shadow */
+  transition: all 0.3s ease;
+  /* Smooth transition for the hover effect */
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+input {
+  height: 40px;
+  width: 60%;
+  border-radius: 30px;
+  border: 1px solid lightgray;
+}
+
+.menu {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  .header {
+    height: 50px;
+    /* background-color: red; */
+    flex-direction: column;
+    display: block;
+    overflow-y: hidden;
+    transition: 0.3s;
+    position: fixed;
+    z-index: 150;
+    top: 0;
+    background-color: white;
+    /* align-items: flex-start; */
+  }
+
+  .logo {
+    height: 50px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: yellow; */
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .navigation {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .utils {
+    width: 70%;
+  }
+
+  .navigation > .nav-links {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5px;
+    height: auto;
+  }
+
+  .nav-links > .nav-link {
+    padding: 3px;
+  }
+
+  .nav-links > .nav-link:hover {
+    background: rgb(215, 214, 214);
+    padding: 3px;
+    border-radius: 10px;
+  }
+
+  .nav-link:hover {
+    cursor: pointer;
+  }
+
+  .utils {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .banner {
+    height: 375px;
+    margin-top: 50px;
+  }
+
+  .slide {
+    background-size: cover;
+    padding-left: 0%;
+  }
+
+  #progress-bar {
+    display: hidden;
+  }
+
+  .slide-details {
+    width: 80%;
+  }
+
+  .slide-details > h1 {
+    font-size: 22px;
+  }
+
+  .btn {
+    font-size: 10px;
+  }
+
+  .featured {
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+  .featured-box-1 {
+    width: 100%;
+    height: 250px;
+  }
+
+  .featured-box-1 img,
+  .featured-box-3 img {
+    margin-top: -100px;
+  }
+
+  .featured-box-2 {
+    width: 100%;
+    height: 300px;
+    row-gap: 5px;
+  }
+
+  .featured-box-2-box-1,
+  .featured-box-2-box-2,
+  .featured-box-2-box-3 {
+    height: 147.5px;
+  }
+
+  .featured-box-3 {
+    width: 100%;
+    height: 250px;
+  }
+
+  .products {
+    padding: 30px 5%;
+    align-items: flex-start;
+    overflow-x: scroll;
+  }
+
+  .products-list {
+    width: 290%;
+  }
+
+  .categories {
+    padding: 30px 5%;
+    flex-direction: column;
+  }
+
+  .category {
+    width: 100%;
+  }
+
+  .insta {
+    padding: 30px 5%;
+  }
+
+  .posts {
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
+  .post-image {
+    width: 49%;
+  }
+
+  .feedback-container h2{
+    font-size: 1rem;
+  }
+
+  .footer {
+    padding: 30px 5%;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  .footer-section {
+    width: 100%;
+  }
+}
+
+/* Contact Section Styles */
+
+.contact-section {
+  max-width: 1700px;
+  margin: 100px auto; /* Center the section horizontally */
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-family: "futura";
+}
+
+.contact-description {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 30px;
+  font-family: "futura";
+}
+
+.contact-email {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-email:hover {
+  text-decoration: underline;
+}
+
+/* Container for Form and Map */
+.contact-form-container {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Distribute space evenly */
+  gap: 30px; /* Space between form and map */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Map Container */
+.contact-map {
+  flex: 1; /* Allow map to grow */
+  max-width: 100%; /* Prevent overflow */
+  overflow: hidden; /* Hide overflow */
+  border-radius: 10px; /* Match the section's border radius */
+}
+
+/* Iframe Styles */
+.contact-map iframe {
+  width: 100%; /* Make iframe responsive */
+  height: 100%; /* Match the container's height */
+  border: 0; /* Remove border */
+}
+
+/* Ensure contact form and map have the same height */
+.contact-form {
+  display: flex; /* Allow flexibility */
+  flex-direction: column; /* Stack form fields vertically */
+  justify-content: space-between; /* Distribute space evenly */
+  flex: 1; /* Allow form to grow */
+}
+
+/* Additional Styles for Responsiveness */
+@media (max-width: 768px) {
+  .contact-form-container {
+      flex-direction: column; /* Stack form and map vertically on small screens */
+      align-items: center; /* Center items */
+  }
+}
+
+
+
+/* Form Styles */
+.contact-form {
+  margin-bottom: 40px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-label {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  display: block;
+  font-family: "futura";
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: "futura";
+}
+
+.form-textarea {
+  height: 120px;
+}
+
+.btn-submit {
+  padding: 12px 20px;
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.1rem;
+  font-family: "futura";
+}
+
+.btn-submit:hover {
+  background-color: #d35400;
+}
+
+/* Contact Info Section */
+.contact-info {
+  margin-top: 30px;
+  font-family: "futura";
+}
+
+.info-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-family: "futura";
+}
+
+.info-detail {
+  font-size: 1rem;
+  font-family: "futura";
+  color: #555;
+  margin: 5px 0;
+}
+
+.footer-copyright {
+  display: flex;
+  margin-top: auto;
+  font-size: 18px;
+
+  justify-content: center;
+  background-color: #f6f5fa;
+  font-family: "futura";
+  color: #1d1d1d;
+}
+
+#copyright {
+  margin-bottom: 5px;
+}
+
+.terms-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.terms-title {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+}
+
+.terms-description {
+  color: #2c3e50;
+  font-size: 1.4em;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.terms-details,
+.terms-thanks {
+  font-size: 1rem;
+  font-family: "futura";
+  color: #555;
+  margin: 5px 0;
+  line-height: 1.6;
+  text-align: left;
+}
+
+
+
+.pro-tabs-container {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  border: #14171a 2px solid !important;
+  border-radius: 50px;
+}
+
+.pro-tabs {
+  text-decoration: none;
+  color: black;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  font-size: 16px;
+  display: block;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 10;
+}
+
+.slider {
+  background: url(shoppingimage.jgp);
+  margin: 12px;
+  display: flex;
+  justify-content: center;
+}
+.my2 {
+  text-align: center;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.card-items {
+  height: 350px;
+  width: 230px;
+  margin: 40px;
+  align-items: center;
+}
+.cardimage {
+  width: 200px;
+
+  height: 270px;
+
+  height: 290px;
+  transition: 1s;
+}
+.lines {
+  text-align: center;
+  font-family: "futura";
+}
+.cardimage:hover {
+  width: 220px;
+  height: 310px;
+}
+.footwear-items {
+  height: 280px;
+  width: 230px;
+  margin: 60px;
+}
+.footwear {
+  width: 230px;
+  height: 250px;
+  transition: 1s;
+}
+.footwear:hover {
+  width: 240px;
+  height: 260px;
+}
+/* dropdown for products nav-item */
+/* dropdown styling  */
+/* .dropdown a{
+    color: #1d1d1d;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 85px;
+} */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content li {
+  float: none;
+}
+
+.dropdown-content li a {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.bg-neutral-100 {
+  margin-top: 10px;
+  height: 50px;
+  padding: 0 0;
+}
+
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 1px;
+}
+
+.tabs {
+  position: relative;
+  display: flex;
+  list-style-type: none;
+  border: 2px solid black !important;
+  border-radius: 999px;
+  background-color: white;
+  padding: 0;
+}
+
+.tab {
+  position: relative;
+}
+
+.tab a {
+  text-decoration: none;
+  color: black;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  font-size: 16px;
+  display: block;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 10;
+}
+
+.tab a:hover {
+  color: white !important;
+}
+
+.cursor {
+  position: absolute;
+  background-color: black;
+  height: 40px;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  z-index: 0;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.tab:hover .cursor {
+  opacity: 1;
+}
+.tab:hover .dropdown-parent {
+  color: white;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content li {
+  list-style-type: none;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: darkgray;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  color: white;
+}
+
+/*return policy page*/
+
+.return-policy-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.return-policy-details ul {
+  margin: 0 0 15px 20px;
+  padding-left: 20px;
+}
+
+.return-policy-details li {
+  margin-bottom: 5px;
+}
+
+.return-policy-title {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+}
+
+.return-policy-description {
+  color: #2c3e50;
+  font-size: 1.4em;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.return-policy-details,
+.return-policy-thanks {
+  font-size: 1rem;
+  font-family: "Futura", sans-serif; /* Added fallback font */
+  color: #555;
+  margin: 5px 0;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Contact Section*/
+body {
+  font-family: "Arial", sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-section {
+  padding: 50px 15px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 36px;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.contact-section p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Contact Information Styles */
+.contact-info-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 23px;
+  margin-bottom: 40px;
+  margin-top: 50px;
+}
+ul {
+  list-style-type: none;
+}
+
+.contact-info-box {
+  margin-top: 200px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  width: 30%;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 18px;
+  transition: box-shadow 0.3s ease;
+}
+
+.contact-info-box:hover {
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info-box h3 {
+  font-size: 24px;
+  color: #2d80d8;
+  margin-bottom: 15px;
+}
+
+.contact-info-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Icon Styles */
+.contact-info-box i {
+  font-size: 40px;
+  color: #2d80d8;
+  margin-bottom: 10px;
+}
+
+/* Google Maps Embed */
+.contact-map {
+  width: 55%;
+  height: 550px;
+  margin: 0 auto;
+   
+}
+
+.contact-map {
+  position: relative;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+  width: 900px;
+  height: 650px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Contact Form Styles */
+.contact-form-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  width: 1450px;
+}
+
+.contact-form {
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+  border-radius: 18px;
+  width: 45%;
+  padding: 30px;
+  margin: 10px;
+}
+
+.contact-form h3 {
+  font-size: 24px;
+  color: #2d80d8;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #2d80d8;
+  outline: none;
+}
+
+.contact-form .btn-submit {
+  background-color: #2d80d8;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form .btn-submit:hover {
+  background-color: #2d80d8;
+}
+@media screen and (max-width: 992px){
+  .contact-map  iframe {
+    width: 100%;
+    height: 300px; ;
+    margin-bottom: 0px;
+     
+  }
+}
+/* Responsive Adjustments */
+@media screen and (max-width: 992px) {
+  .contact-info-box {
+    width: 45%;
+    margin-bottom: 20px;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-info-container,
+  .contact-form-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-info-box {
+    width: 90%;
+  }
+}
+
+ul {
+  list-style-type: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.tooltip {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+ /* Tooltip text  */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: rgb(87, 147, 236);
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  left: 60%;
+  margin-left: -100px; 
+  top: 36%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 13px;
+}
+  
+/* Show the tooltip on hover */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* dark mode */
+
+body {
+  background-color: #f0e6db;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #828593;
+  color: #ffffff;
+}
+
+header.dark-mode {
+  background-color: #1f1f1f;
+}
+
+.mode-toggle {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 10px;
+}
+
+.mode-toggle img {
+  width: 24px;
+  height: 24px;
+}
+
+.navbar {
+  background-color: #f0f0f0;
+  transition: background-color 0.3s;
+}
+
+body.dark-mode .navbar {
+  background-color: #5a4343;
+}
+
+body.dark-mode .navbar a:hover {
+  color: #4C51BF;
+  transform: translateY(-2px);
+}
+
+
+</style>
+<style>
+
+    /* Hiệu ứng chuyển Dark/Light mượt đét, không delay, không làm di chuyển gì hết */
+html, body, body * {
+  transition:
+    background-color 0.45s ease-in-out,
+    color 0.45s ease-in-out,
+    border-color 0.45s ease-in-out,
+    box-shadow 0.45s ease-in-out;
+  will-change: background-color, color, border-color, box-shadow;
+}
+
+/* Instagram grid đẹp chuẩn 6 ảnh 1 hàng */
+.insta .posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Khung ảnh vuông cố định */
+.post-image {
+  position: relative;
+  width: calc(100% / 6 - 15px); /* 6 ảnh trên 1 hàng */
+  aspect-ratio: 1 / 1; /* tự căn vuông, responsive chuẩn */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Ảnh auto căn giữa, không méo */
+.post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Icon Instagram hiện giữa ảnh */
+.post-image i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: white;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* tránh ảnh hưởng hover */
+}
+
+/* Hover đẹp nhẹ */
+.post-image:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.8);
+}
+
+.post-image:hover i {
+  opacity: 1;
+}
+
+/* Responsive: 3 ảnh / hàng ở tablet, 2 ảnh ở mobile */
+@media (max-width: 1024px) {
+  .post-image {
+    width: calc(100% / 3 - 10px);
+  }
+}
+
+@media (max-width: 600px) {
+  .post-image {
+    width: calc(100% / 2 - 10px);
+  }
+}
+
+</style>
+</html>
+
+
+

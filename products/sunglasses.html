@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sunglasses</title>
+    <link rel="stylesheet" href="../Style/sunglasses.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="productscss.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header" id="header">
+      <div class="logo">
+        <p>MND - Fashion</p>
+        <i class="fa-solid fa-bars menu" id="menu"></i>
+      </div>
+
+      <nav class="bg-neutral-100 py-20">
+        <div class="tabs-container">
+          <ul id="tabs" class="tabs">
+            <li class="tab">
+              <a href="../index.html">Home</a>
+              <div class="cursor"></div>
+            </li>
+            <li class="tab">
+              <a href="../about.html">About</a>
+              <div class="cursor"></div>
+            </li>
+            <li class="tab">
+              <a href="../features.html">Features</a>
+              <div class="cursor"></div>
+            </li>
+            <li class="dropdown tab">
+              <a class="dropdown-parent">Products</a>
+              <div class="cursor"></div>
+              <ul class="dropdown-content">
+                <li><a href="../mens.html" class="priye">Mens</a></li>
+                <li><a href="../womens.html">Womens</a></li>
+              </ul>
+            </li>
+            <li class="tab" style="margin-left: 15px">
+              <a href="../contact.html">Contact Us</a>
+              <div class="cursor"></div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <nav class="utils">
+        <ul class="nav-links">
+          <li class="nav-link">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </li>
+          <li class="nav-link">
+            <a href="../login-sginup.html">
+              <i class="fa-solid fa-user"></i>
+            </a>
+          </li>
+          <li class="nav-link">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Sunglasses Page -->
+    <section class="sunglasses-section">
+      <h1>Shop Sunglasses</h1>
+      <div class="sunglasses-grid">
+        <!-- Sunglasses Cards (9 examples) -->
+        <div class="sunglasses-card">
+          <div class="sunglasses-image">
+            <img
+              src="../images/sunglasses1.jpg"
+              alt="Sunglasses 1"
+              style="cursor: pointer"
+              onclick="showProductDetailFromImage(this)"
+              data-name="Aviator Sunglasses"
+              data-price="150.00"
+              data-description="Classic aviator style with polarized lenses."
+              data-images='["../images/sunglasses1.jpg","../images/sunglasses1_2.jpg","../images/sunglasses1_3.jpg","../images/sunglasses1_4.jpg","../images/sunglasses1_5.jpg"]'
+            />
+          </div>
+          <div class="sunglasses-info">
+            <h2>Aviator Sunglasses</h2>
+            <p class="price">$150.00</p>
+            <p class="rating">Rating: ⭐⭐⭐⭐ (4.5)</p>
+            <p class="description">
+              Classic aviator style with polarized lenses.
+            </p>
+            <p class="reviews">Reviews: 80</p>
+            <button
+              class="buy-now"
+              data-name="Aviator Sunglasses"
+              data-price="150.00"
+              data-description="Classic aviator style with polarized lenses."
+              data-images='["../images/sunglasses1.jpg","../images/sunglasses1_2.jpg","../images/sunglasses1_3.jpg","../images/sunglasses1_4.jpg","../images/sunglasses1_5.jpg"]'
+            >
+              Buy Now
+            </button>
+          </div>
+        </div>
+        <div class="sunglasses-card">
+          <div class="sunglasses-image">
+            <img
+              src="../images/sunglasses2.jpg"
+              alt="Sunglasses 2"
+              style="cursor: pointer"
+              onclick="showProductDetailFromImage(this)"
+              data-name="Round Frame Sunglasses"
+              data-price="130.00"
+              data-description="A modern twist on retro round frames."
+              data-images='["../images/sunglasses2.jpg","../images/sunglasses2_2.jpg","../images/sunglasses2_3.jpg","../images/sunglasses2_4.jpg","../images/sunglasses2_5.jpg"]'
+            />
+          </div>
+          <div class="sunglasses-info">
+            <h2>Round Frame Sunglasses</h2>
+            <p class="price">$130.00</p>
+            <p class="rating">Rating: ⭐⭐⭐⭐ (4.6)</p>
+            <p class="description">A modern twist on retro round frames.</p>
+            <p class="reviews">Reviews: 65</p>
+            <button class="buy-now">Buy Now</button>
+          </div>
+        </div>
+        <div class="sunglasses-card">
+          <div class="sunglasses-image">
+            <img
+              src="../images/sunglasses3.jpg"
+              alt="Sunglasses 3"
+              style="cursor: pointer"
+              onclick="showProductDetailFromImage(this)"
+              data-name="Wayfarer Sunglasses"
+              data-price="120.00"
+              data-description="Iconic wayfarer design with UV protection."
+              data-images='["../images/sunglasses3.jpg","../images/sunglasses3_2.jpg","../images/sunglasses3_3.jpg","../images/sunglasses3_4.jpg","../images/sunglasses3_5.jpg"]'
+            />
+          </div>
+          <div class="sunglasses-info">
+            <h2>Wayfarer Sunglasses</h2>
+            <p class="price">$120.00</p>
+            <p class="rating">Rating: ⭐⭐⭐⭐ (4.7)</p>
+            <p class="description">
+              Iconic wayfarer design with UV protection.
+            </p>
+            <p class="reviews">Reviews: 90</p>
+            <button class="buy-now">Buy Now</button>
+          </div>
+        </div>
+        <div class="sunglasses-card">
+          <div class="sunglasses-image">
+            <img
+              src="../images/sunglasses4.jpg"
+              alt="Sunglasses 4"
+              style="cursor: pointer"
+              onclick="showProductDetailFromImage(this)"
+              data-name="Cat Eye Sunglasses"
+              data-price="100.00"
+              data-description="Elegant cat-eye frames for a fashionable look."
+              data-images='["../images/sunglasses4.jpg","../images/sunglasses4_2.jpg","../images/sunglasses4_3.jpg","../images/sunglasses4_4.jpg","../images/sunglasses4_5.jpg"]'
+            />
+          </div>
+          <div class="sunglasses-info">
+            <h2>Cat Eye Sunglasses</h2>
+            <p class="price">$100.00</p>
+            <p class="rating">Rating: ⭐⭐⭐⭐⭐ (4.9)</p>
+            <p class="description">
+              Elegant cat-eye frames for a fashionable look.
+            </p>
+            <p class="reviews">Reviews: 70</p>
+            <button class="buy-now">Buy Now</button>
+          </div>
+        </div>
+        <div class="sunglasses-card">
+          <div class="sunglasses-image">
+            <img
+              src="../images/sunglasses5.jpg"
+              alt="Sunglasses 5"
+              style="cursor: pointer"
+              onclick="showProductDetailFromImage(this)"
+              data-name="Sport Performance Sunglasses"
+              data-price="160.00"
+              data-description="Ideal for active sports with impact resistance."
+              data-images='["../images/sunglasses5.jpg","../images/sunglasses5_2.jpg","../images/sunglasses5_3.jpg","../images/sunglasses5_4.jpg","../images/sunglasses5_5.jpg"]'
+            />
+          </div>
+          <div class="sunglasses-info">
+            <h2>Sport Performance Sunglasses</h2>
+            <p class="price">$160.00</p>
+            <p class="rating">Rating: ⭐⭐⭐⭐⭐ (4.8)</p>
+            <p class="description">
+              Ideal for active sports with impact resistance.
+            </p>
+            <p class="reviews">Reviews: 85</p>
+            <button class="buy-now">Buy Now</button>
+          </div>
+        </div>
+        <div class="sunglasses-card">
+          <div class="sunglasses-image">
+            <img
+              src="../images/sunglasses6.jpg"
+              alt="Sunglasses 6"
+              style="cursor: pointer"
+              onclick="showProductDetailFromImage(this)"
+              data-name="Oversized Sunglasses"
+              data-price="140.00"
+              data-description="Bold oversized frames for a glamorous look."
+              data-images='["../images/sunglasses6.jpg","../images/sunglasses6_2.jpg","../images/sunglasses6_3.jpg","../images/sunglasses6_4.jpg","../images/sunglasses6_5.jpg"]'
+            />
+          </div>
+          <div class="sunglasses-info">
+            <h2>Oversized Sunglasses</h2>
+            <p class="price">$140.00</p>
+            <p class="rating">Rating: ⭐⭐⭐⭐ (4.5)</p>
+            <p class="description">
+              Bold oversized frames for a glamorous look.
+            </p>
+            <p class="reviews">Reviews: 50</p>
+            <button class="buy-now">Buy Now</button>
+          </div>
+        </div>
+        <div class="sunglasses-card">
+          <div class="sunglasses-image">
+            <img
+              src="../images/sunglasses7.jpg"
+              alt="Sunglasses 7"
+              style="cursor: pointer"
+              onclick="showProductDetailFromImage(this)"
+              data-name="Retro Square Sunglasses"
+              data-price="110.00"
+              data-description="Stylish square frames with UV400 protection."
+              data-images='["../images/sunglasses7.jpg","../images/sunglasses7_2.jpg","../images/sunglasses7_3.jpg","../images/sunglasses7_4.jpg","../images/sunglasses7_5.jpg"]'
+            />
+          </div>
+          <div class="sunglasses-info">
+            <h2>Retro Square Sunglasses</h2>
+            <p class="price">$110.00</p>
+            <p class="rating">Rating: ⭐⭐⭐⭐ (4.4)</p>
+            <p class="description">
+              Stylish square frames with UV400 protection.
+            </p>
+            <p class="reviews">Reviews: 60</p>
+            <button class="buy-now">Buy Now</button>
+          </div>
+        </div>
+        <div class="sunglasses-card">
+          <div class="sunglasses-image">
+            <img
+              src="../images/sunglasses8.jpg"
+              alt="Sunglasses 8"
+              style="cursor: pointer"
+              onclick="showProductDetailFromImage(this)"
+              data-name="Foldable Sunglasses"
+              data-price="90.00"
+              data-description="Convenient and compact for easy storage."
+              data-images='["../images/sunglasses8.jpg","../images/sunglasses8_2.jpg","../images/sunglasses8_3.jpg","../images/sunglasses8_4.jpg","../images/sunglasses8_5.jpg"]'
+            />
+          </div>
+          <div class="sunglasses-info">
+            <h2>Foldable Sunglasses</h2>
+            <p class="price">$90.00</p>
+            <p class="rating">Rating: ⭐⭐⭐⭐ (4.3)</p>
+            <p class="description">Convenient and compact for easy storage.</p>
+            <p class="reviews">Reviews: 40</p>
+            <button class="buy-now">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Thêm popup modal vào cuối file -->
+    <div id="product-details-modal-root"></div>
+    <script src="product-details.js"></script>
+    <script>
+      function showProductDetailFromImage(img) {
+        // Lấy dữ liệu từ data-*
+        const product = {
+          name: img.getAttribute("data-name"),
+          price: img.getAttribute("data-price"),
+          description: img.getAttribute("data-description"),
+          images: JSON.parse(img.getAttribute("data-images")),
+        };
+        // Tạo modal nếu chưa có
+        if (!document.getElementById("productModal")) {
+          fetch("product-details.html")
+            .then((res) => res.text())
+            .then((html) => {
+              document.getElementById("product-details-modal-root").innerHTML =
+                html;
+              setTimeout(() => window.showProductModal(product), 200);
+            });
+        } else {
+          window.showProductModal(product);
+        }
+      }
+    </script>
+  </body>
+</html>

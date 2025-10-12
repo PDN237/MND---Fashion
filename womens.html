@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MND - Fashion</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" herf="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <style>
+   
+
+        .testimonal__card {
+            padding: 10px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    height:fit-content;
+    align-content: center;
+    align-items: center;
+}
+
+.testimonal__card:hover {
+            transform: translateY(-10px);
+            background-color: #f7f7f7;
+            box-shadow: 0 0 20px rgba(255, 216, 42, 0.5), 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+.testimonal__card img{
+    width: 100%;
+    aspect-ratio: 2/2.5;
+    object-fit: cover;
+}
+
+
+
+/* Testimonial Title */
+.testimonal__title {  
+    font-size: 1.2rem; 
+    margin-top: 1rem;
+}
+
+/* Testimonial Description */
+.testimonal__description {
+   
+    font-size: 1.2rem;
+    padding: 0.75rem 1rem;
+}
+
+
+.testimonal__swiper {
+    display: flex;
+    justify-content: center;
+}
+
+/* Cards Wrapper */
+.cards {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+.my2{
+background-color: black;
+color: white;
+padding:5px 0px ;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+        .star{
+           margin: 10px;
+        }
+        .checked{
+            color: orange;
+        }
+  
+  
+  
+</style>
+<style>
+#progress-container {
+  position: fixed ;
+  top: 1px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  z-index: 99990;
+  /* background: #f3f3f3; */
+}
+</style>
+      
+      
+      
+</head>
+<body>
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+      </div>
+    <!-- header section  -->
+    <header class="header" id="header">
+          <div class="logo">
+            <a href="/"> <img src="images/logolight.png" alt="Logo" srcset=""> </a>
+            <i class="fa-solid fa-bars menu" id="menu"></i>
+        </div>
+
+        <nav class="navigation">
+            <div class="pro-tabs-container">
+                    <ul id="pro-tabs" class="nav-links" >
+                        <li class="nav-link border">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="nav-link border">
+                            <a href="#Topwear">Topwear</a>
+                        </li>
+                        <li class="nav-link border">
+                            <a href="#Bottomwear">Bottomwear</a>
+                        </li>
+                        <li class="nav-link border">
+                            <a href="#Footwear">Footwear</a>
+                        </li>
+                        <li class="nav-link border" style="margin-left: 15px;">
+                            <a href="contact.html">Contact Us</a>
+                        </li> 
+                    </ul>
+            </div>
+        </nav>
+
+        <nav class="utils">
+            <ul class="nav-links">
+                <li class="nav-link">
+                    <i class="fa-solid fa-cart-shopping" id="cart-icon"></i>
+                </li>
+                <li class="nav-link">
+                    <a href="login-sginup.html">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </li>
+                <li class="nav-link">
+                    <button id="lang-toggle" style="background: none; border: none; color: white; font-size: 16px; cursor: pointer;">EN</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+     <main>
+        <div class="container">
+            <div class="slider">
+                <a href="#Bottomwear"><img src="img/wm/wm0.jpg" alt="" height="500px" width="100%vw"></a>      
+            </div>
+            <h2 class="my2" id="Topwear" data-en="Topwear" data-vi="Trang phục trên">Topwear</h2>
+<div class="cards">
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm1.jpg" height="307" alt="Áo sơ mi nữ trắng cổ điển, chất liệu cotton thoáng mát." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Classic White Women's Shirt" data-vi="Áo sơ mi nữ trắng cổ điển">Classic White Women's Shirt</h2>
+                <div class="testimonal__price">Giá: 390.000đ</div>
+                <div class="testimonal__description" data-vi="Áo sơ mi trắng, chất liệu cotton mềm mại, kiểu dáng thanh lịch, phù hợp đi làm hoặc đi chơi.">
+                    White shirt, soft cotton fabric, elegant design, suitable for office or outings.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Áo sơ mi nữ trắng cổ điển', 390, 'img/wm/wm1.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm2.jpg" height="307" alt="Áo len nữ xám, kiểu dáng trẻ trung, giữ ấm tốt." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Youthful Gray Women's Sweater" data-vi="Áo len nữ xám trẻ trung">Youthful Gray Women's Sweater</h2>
+                <div class="testimonal__price">Giá: 420.000đ</div>
+                <div class="testimonal__description" data-vi="Áo len màu xám, thiết kế hiện đại, giữ ấm tốt, phù hợp thời tiết se lạnh.">
+                    Gray sweater, modern design, good warmth retention, suitable for cool weather.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Áo len nữ xám trẻ trung', 420, 'img/wm/wm2.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm3.jpg" height="307" alt="Đầm nữ trắng, kiểu dáng đơn giản, thanh lịch." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Elegant White Women's Dress" data-vi="Đầm nữ trắng thanh lịch">Elegant White Women's Dress</h2>
+                <div class="testimonal__price">Giá: 520.000đ</div>
+                <div class="testimonal__description" data-vi="Đầm trắng, chất liệu nhẹ, kiểu dáng đơn giản, phù hợp đi tiệc hoặc dạo phố.">
+                    White dress, light fabric, simple design, suitable for parties or strolling.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Đầm nữ trắng thanh lịch', 520, 'img/wm/wm3.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm4.jpg" height="307" alt="Đầm nữ nâu, kiểu dáng sang trọng, thời thượng." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Elegant Brown Women's Dress" data-vi="Đầm nữ nâu sang trọng">Elegant Brown Women's Dress</h2>
+                <div class="testimonal__price">Giá: 650.000đ</div>
+                <div class="testimonal__description" data-vi="Đầm màu nâu, thiết kế thời thượng, phù hợp dự tiệc hoặc sự kiện quan trọng.">
+                    Brown dress, fashionable design, suitable for parties or important events.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Đầm nữ nâu sang trọng', 650, 'img/wm/wm4.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm5.jpg" height="307" alt="Áo vest nữ xám, phong cách hiện đại, lịch lãm." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Modern Gray Women's Vest" data-vi="Áo vest nữ xám hiện đại">Modern Gray Women's Vest</h2>
+                <div class="testimonal__price">Giá: 1.100.000đ</div>
+                <div class="testimonal__description" data-vi="Áo vest xám, kiểu dáng trẻ trung, phù hợp công sở hoặc dự tiệc.">
+                    Gray vest, youthful style, suitable for office or parties.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Áo vest nữ xám hiện đại', 1100, 'img/wm/wm5.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm6.jpg" height="307" alt="Áo cardigan nữ len be, kiểu dáng ấm áp, thời trang." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Warm Beige Women's Cardigan" data-vi="Áo cardigan nữ len be ấm áp">Warm Beige Women's Cardigan</h2>
+                <div class="testimonal__price">Giá: 480.000đ</div>
+                <div class="testimonal__description" data-vi="Áo cardigan len màu be, chất liệu dày dặn, giữ ấm tốt, phù hợp mùa đông.">
+                    Beige cardigan, thick fabric, good warmth retention, suitable for winter.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Áo cardigan nữ len be ấm áp', 480, 'img/wm/wm6.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm7.jpg" height="307" alt="Áo hoodie nữ trắng, kiểu dáng năng động, trẻ trung." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Dynamic White Women's Hoodie" data-vi="Áo hoodie nữ trắng năng động">Dynamic White Women's Hoodie</h2>
+                <div class="testimonal__price">Giá: 420.000đ</div>
+                <div class="testimonal__description" data-vi="Áo hoodie trắng, chất liệu nỉ mềm, phù hợp mặc đi chơi, dạo phố.">
+                    White hoodie, soft fleece fabric, suitable for outings, strolling.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Áo hoodie nữ trắng năng động', 420, 'img/wm/wm7.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm8.jpg" height="307" alt="Áo kiểu nữ trắng, thiết kế sang trọng, thời trang." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Elegant White Women's Blouse" data-vi="Áo kiểu nữ trắng sang trọng">Elegant White Women's Blouse</h2>
+                <div class="testimonal__price">Giá: 490.000đ</div>
+                <div class="testimonal__description" data-vi="Áo kiểu trắng, thiết kế sang trọng, phù hợp đi làm hoặc dự tiệc.">
+                    White blouse, elegant design, suitable for office or parties.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Áo kiểu nữ trắng sang trọng', 490, 'img/wm/wm8.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+</div>
+              
+                
+            <h2 class="my2" id="Bottomwear" data-en="Bottomwear" data-vi="Trang phục dưới">Bottomwear</h2>
+<div class="cards">
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm9.jpg" height="307" alt="Chân váy bút chì nữ đen, kiểu dáng công sở, thanh lịch." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Black Women's Pencil Skirt" data-vi="Chân váy bút chì nữ đen">Black Women's Pencil Skirt</h2>
+                <div class="testimonal__price">Giá: 420.000đ</div>
+                <div class="testimonal__description" data-vi="Chân váy bút chì màu đen, chất liệu co giãn, phù hợp mặc công sở hoặc dự tiệc.">
+                    Black pencil skirt, stretch fabric, suitable for office or parties.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Chân váy bút chì nữ đen', 420, 'img/wm/wm9.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm10.jpg" height="307" alt="Chân váy xếp ly nữ màu kem, kiểu dáng trẻ trung, nữ tính." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Cream Women's Pleated Skirt" data-vi="Chân váy xếp ly nữ màu kem">Cream Women's Pleated Skirt</h2>
+                <div class="testimonal__price">Giá: 390.000đ</div>
+                <div class="testimonal__description" data-vi="Chân váy xếp ly màu kem, chất liệu nhẹ, phù hợp đi chơi, dạo phố hoặc dự tiệc.">
+                    Cream pleated skirt, light fabric, suitable for outings, strolling or parties.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Chân váy xếp ly nữ màu kem', 390, 'img/wm/wm10.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm11.jpg" height="307" alt="Quần tây nữ xám, kiểu dáng công sở, thanh lịch." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Gray Women's Formal Pants" data-vi="Quần tây nữ xám công sở">Gray Women's Formal Pants</h2>
+                <div class="testimonal__price">Giá: 470.000đ</div>
+                <div class="testimonal__description" data-vi="Quần tây màu xám, chất liệu vải cao cấp, phù hợp mặc đi làm hoặc dự tiệc.">
+                    Gray formal pants, high-quality fabric, suitable for work or parties.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Quần tây nữ xám công sở', 470, 'img/wm/wm11.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm12.jpg" height="307" alt="Quần ống rộng nữ nâu, kiểu dáng thời trang, thoải mái." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Fashionable Brown Women's Wide Pants" data-vi="Quần ống rộng nữ nâu thời trang">Fashionable Brown Women's Wide Pants</h2>
+                <div class="testimonal__price">Giá: 520.000đ</div>
+                <div class="testimonal__description" data-vi="Quần ống rộng màu nâu, chất liệu mềm mại, phù hợp mặc đi chơi hoặc dạo phố.">
+                    Brown wide pants, soft fabric, suitable for outings or strolling.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Quần ống rộng nữ nâu thời trang', 520, 'img/wm/wm12.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm13.jpg" height="307" alt="Chân váy xòe nữ trắng, kiểu dáng trẻ trung, nữ tính." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Youthful White Women's A-Line Skirt" data-vi="Chân váy xòe nữ trắng trẻ trung">Youthful White Women's A-Line Skirt</h2>
+                <div class="testimonal__price">Giá: 410.000đ</div>
+                <div class="testimonal__description" data-vi="Chân váy xòe màu trắng, chất liệu nhẹ, phù hợp đi chơi, dạo phố hoặc dự tiệc.">
+                    White A-line skirt, light fabric, suitable for outings, strolling or parties.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Chân váy xòe nữ trắng trẻ trung', 410, 'img/wm/wm13.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm14.jpg" height="307" alt="Quần short nữ màu be, kiểu dáng năng động, trẻ trung." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Dynamic Beige Women's Shorts" data-vi="Quần short nữ màu be năng động">Dynamic Beige Women's Shorts</h2>
+                <div class="testimonal__price">Giá: 350.000đ</div>
+                <div class="testimonal__description" data-vi="Quần short màu be, chất liệu nhẹ, phù hợp mặc đi chơi, dạo phố hoặc du lịch.">
+                    Beige shorts, light fabric, suitable for outings, strolling or travel.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Quần short nữ màu be năng động', 350, 'img/wm/wm14.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm15.jpg" height="307" alt="Quần tây nữ màu kem, kiểu dáng thanh lịch, công sở." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Elegant Cream Women's Formal Pants" data-vi="Quần tây nữ màu kem thanh lịch">Elegant Cream Women's Formal Pants</h2>
+                <div class="testimonal__price">Giá: 480.000đ</div>
+                <div class="testimonal__description" data-vi="Quần tây màu kem, chất liệu vải mềm, phù hợp mặc đi làm hoặc dự tiệc.">
+                    Cream formal pants, soft fabric, suitable for work or parties.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Quần tây nữ màu kem thanh lịch', 480, 'img/wm/wm15.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm16.jpg" height="307" alt="Quần ống rộng nữ trắng, kiểu dáng thời trang, thoải mái." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Fashionable White Women's Wide Pants" data-vi="Quần ống rộng nữ trắng thời trang">Fashionable White Women's Wide Pants</h2>
+                <div class="testimonal__price">Giá: 530.000đ</div>
+                <div class="testimonal__description" data-vi="Quần ống rộng màu trắng, chất liệu nhẹ, phù hợp mặc đi chơi, dạo phố hoặc dự tiệc.">
+                    White wide pants, light fabric, suitable for outings, strolling or parties.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Quần ống rộng nữ trắng thời trang', 530, 'img/wm/wm16.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+</div>
+                    
+                </div>
+            </div>   
+                
+            <h2 class="my2" id="Footwear" data-en="Footwear" data-vi="Giày dép">Footwear</h2>
+<div class="cards">
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm17.jpg" height="307" alt="Giày cao gót nữ dây quai, kiểu dáng sang trọng." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Strappy Women's High Heels" data-vi="Giày cao gót nữ dây quai">Strappy Women's High Heels</h2>
+                <div class="testimonal__price">Giá: 520.000đ</div>
+                <div class="testimonal__description" data-vi="Giày cao gót dây quai, thiết kế sang trọng, phù hợp dự tiệc hoặc đi làm.">
+                    Strappy high heels, elegant design, suitable for parties or office.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Giày cao gót nữ dây quai', 520, 'img/wm/wm17.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm18.jpg" height="307" alt="Dép sandal nữ trắng, kiểu dáng đơn giản, thoải mái." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Simple White Women's Sandals" data-vi="Dép sandal nữ trắng đơn giản">Simple White Women's Sandals</h2>
+                <div class="testimonal__price">Giá: 280.000đ</div>
+                <div class="testimonal__description" data-vi="Dép sandal màu trắng, chất liệu nhẹ, phù hợp đi biển hoặc dạo phố.">
+                    White sandals, light material, suitable for beach or strolling.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Dép sandal nữ trắng đơn giản', 280, 'img/wm/wm18.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm19.jpg" height="307" alt="Dép sandal nữ nâu, kiểu dáng thời trang, năng động." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Fashionable Brown Women's Sandals" data-vi="Dép sandal nữ nâu thời trang">Fashionable Brown Women's Sandals</h2>
+                <div class="testimonal__price">Giá: 320.000đ</div>
+                <div class="testimonal__description" data-vi="Dép sandal màu nâu, thiết kế năng động, phù hợp đi chơi hoặc du lịch.">
+                    Brown sandals, dynamic design, suitable for outings or travel.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Dép sandal nữ nâu thời trang', 320, 'img/wm/wm19.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm20.jpg" height="307" alt="Giày cao gót nữ mũi nhọn, kiểu dáng thanh lịch." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Pointed Women's High Heels" data-vi="Giày cao gót nữ mũi nhọn">Pointed Women's High Heels</h2>
+                <div class="testimonal__price">Giá: 490.000đ</div>
+                <div class="testimonal__description" data-vi="Giày cao gót mũi nhọn, thiết kế thanh lịch, phù hợp đi làm hoặc dự tiệc.">
+                    Pointed high heels, elegant design, suitable for office or parties.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Giày cao gót nữ mũi nhọn', 490, 'img/wm/wm20.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm21.jpg" height="307" alt="Giày búp bê nữ nâu, kiểu dáng cổ điển, dễ phối đồ." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Classic Brown Women's Mary Janes" data-vi="Giày búp bê nữ nâu cổ điển">Classic Brown Women's Mary Janes</h2>
+                <div class="testimonal__price">Giá: 350.000đ</div>
+                <div class="testimonal__description" data-vi="Giày búp bê màu nâu, thiết kế cổ điển, phù hợp đi làm hoặc đi chơi.">
+                    Brown Mary Janes, classic design, suitable for office or outings.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Giày búp bê nữ nâu cổ điển', 350, 'img/wm/wm21.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm22.jpg" height="307" alt="Giày búp bê nữ be, kiểu dáng trẻ trung, nữ tính." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Youthful Beige Women's Mary Janes" data-vi="Giày búp bê nữ be trẻ trung">Youthful Beige Women's Mary Janes</h2>
+                <div class="testimonal__price">Giá: 370.000đ</div>
+                <div class="testimonal__description" data-vi="Giày búp bê màu be, thiết kế nữ tính, phù hợp đi chơi hoặc dạo phố.">
+                    Beige Mary Janes, feminine design, suitable for outings or strolling.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Giày búp bê nữ be trẻ trung', 370, 'img/wm/wm22.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm23.jpg" height="307" alt="Giày sneaker nữ trắng, kiểu dáng năng động, trẻ trung." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Dynamic White Women's Sneakers" data-vi="Giày sneaker nữ trắng năng động">Dynamic White Women's Sneakers</h2>
+                <div class="testimonal__price">Giá: 410.000đ</div>
+                <div class="testimonal__description" data-vi="Giày sneaker màu trắng, thiết kế trẻ trung, phù hợp đi chơi hoặc tập thể thao.">
+                    White sneakers, youthful design, suitable for outings or sports.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star-half checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Giày sneaker nữ trắng năng động', 410, 'img/wm/wm23.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+    <div class="testimonal__swiper">
+        <div class="cards">
+            <article class="testimonal__card">
+                <img src="img/wm/wm24.jpg" height="307" alt="Giày sandal nữ nâu, kiểu dáng thời trang, sang trọng." style="padding: 5px;">
+                <h2 class="testimonal__title" data-en="Elegant Brown Women's Sandals" data-vi="Giày sandal nữ nâu sang trọng">Elegant Brown Women's Sandals</h2>
+                <div class="testimonal__price">Giá: 430.000đ</div>
+                <div class="testimonal__description" data-vi="Giày sandal màu nâu, thiết kế sang trọng, phù hợp dự tiệc hoặc đi chơi.">
+                    Brown sandals, elegant design, suitable for parties or outings.
+                </div>
+                <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-container">
+                                <button class="add-to-cart" onclick="addToCart( 'Giày sandal nữ nâu sang trọng', 430, 'img/wm/wm24.jpg')">Add to Cart</button>
+                                <button class="save-icon"><i class="fas fa-bookmark"></i></button>
+                                <button class="share-icon"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <p class="title">Share</p>
+                                    <div class="quick-share" >
+                                        <button class="quick-btns"><i class="fab fa-facebook facebook-icon"></i></button>
+                                        <button class="quick-btns"><i class="fab fa-whatsapp whatsapp-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-x-twitter twitter-icon"></i></i></button>
+                                        <button class="quick-btns"><i class="fab fa-instagram instagram-icon"></i></i></button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            </article>
+        </div>
+    </div>
+</div>
+                    
+                </div>
+            </div>
+        </div>
+    </main> 
+    <br>
+    <footer class="footer">
+    <div class="footer-section">
+        <h1>Contact Us</h1>
+        <ul class="footer-list">
+            <li>minhnguyendieugmail.com</li>
+            <li>Biên Hòa - Đồng Nai</li>
+            <li>0383270448</li>
+            <li class="border-list"></li>
+            <li class="socials">
+                <a href="" id="linkedin" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="" id="github" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="" id="twitter" target="_blank">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="" id="instagram" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer-section quick-links">
+        <h1>Quick Links</h1>
+        <ul class="footer-list">
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="return-policy.html"><i class="fas fa-undo-alt"></i> Return Policy</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h1>Subscribe to Newsletter</h1>
+        <ul class="footer-list">
+            <li>Be the first to know about exclusive deals and new arrivals straight to your inbox.</li>
+            <li>Join our fashion community today!</li>
+            <li class="sub">
+                <input type="email" placeholder="Enter your email here" id="email-input">
+                <button class="btn" id="open-btn">Subscribe</button>
+            </li>
+        </ul>
+    </div>
+</footer>
+<div class="footer-copyright">
+    <div id="copyright">&copy; <span id="year"></span> MND Fashion. All Rights Reserved.</div>
+</div>
+<script>
+    const currentYear = new Date().getFullYear();
+    document.getElementById('year').textContent = currentYear;
+</script>
+<div class="modal-box" id="modalbox" style="display: none;">
+            <div class="modal" id="modal">
+                <div id="close-btn">&times;</div>
+                <div class="modal-content">
+                    <img src="images\confirmation.png" alt="" height="100px" >
+                    <h2>Subscription Successful!</h2>
+                    <p>Thank you for subscribing.</p>
+                    <p> You will receive notifications via email.</p>
+                </div>
+               
+            </div>
+        </div>
+        
+    
+    <script>
+        let openbtn = document.getElementById('open-btn');
+let modalbox = document.getElementById('modalbox');
+let closebtn = document.getElementById('close-btn');
+let emailInput = document.getElementById('email-input');
+
+// Email validation function
+function isValidEmail(email) {
+        // Regular expression for validating an email
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
+
+    openbtn.addEventListener('click', function () {
+        // Validate email
+        if (emailInput.value === '') {
+            alert('Please enter your email address.');
+        } else if (!isValidEmail(emailInput.value)) {
+            alert('Please enter a valid email address.');
+        } else {
+            modalbox.style.display = 'block'; // Show the modal
+        }
+    });
+
+    closebtn.addEventListener('click', function () {
+        modalbox.style.display = 'none'; // Hide the modal
+    });
+     // Close modal when clicking outside of it
+     modalbox.addEventListener('click', function(event) {
+        if (event.target === modalbox) {
+            modalbox.style.display = 'none'; // Hide modal if the background is clicked
+        }
+    });
+
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+
+    (function() {
+        let headerVisible = false;
+        document.getElementById("menu").addEventListener("click", function () {
+            if (headerVisible === false) {
+                document.getElementById("header").style.height = "290px";
+                headerVisible = true;
+            } else {
+                document.getElementById("header").style.height = "50px";
+                headerVisible = false;
+            }
+        });
+
+        // Show "Go to Top" button after scrolling down
+        const goTopBtn = document.querySelector(".gotopbtn");
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 200) {  // Show the button after scrolling down 200px
+                goTopBtn.style.display = "block";
+            } else {
+                goTopBtn.style.display = "none";
+            }
+        });
+
+    })();  // IIFE to avoid polluting global scope
+
+
+    document.getElementById("cart-icon").addEventListener("click", function() {
+    window.location.href = "cart.html";
+});
+
+
+const copyBtns = document.querySelectorAll('.copy-btn'); // Get all copy buttons
+const linkTexts = document.querySelectorAll('.link'); // Get all link texts
+
+// Loop through each copy button
+copyBtns.forEach((copyBtn, index) => {
+    copyBtn.addEventListener('click', () => {
+        const textToCopy = linkTexts[index].innerText; // Get the text to copy for the current button
+
+        // Use the Clipboard API to copy the text
+        navigator.clipboard.writeText(textToCopy)
+            .then(() => {
+                alert('Link copied to clipboard!');
+            })
+            .catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+    });
+});
+    // Select all save buttons
+const saveButtons = document.querySelectorAll('.save-icon');
+
+// Loop through each save button and attach event listener
+saveButtons.forEach((saveBtn) => {
+    saveBtn.addEventListener('click', () => {
+        saveBtn.classList.toggle('active'); // Toggle the active class
+    });
+});
+
+
+ // Add item to the cart function
+ function addToCart(name, price, image) {
+    // Retrieve cart from localStorage or initialize it as an empty array
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Add new item to the cart array
+    cart.push({ name, price, image, quantity: 1 });
+
+    // Save updated cart back to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    alert(name + ' has been added to the cart');
+  }
+
+
+
+</script> 
+<div class="gtranslate_wrapper"></div>
+        <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>   
+<script src="script/share-button.js"></script>
+<script src="script/progressbar.js"></script>
+<script>
+let currentLang = 'en';
+
+document.getElementById('lang-toggle').addEventListener('click', function() {
+    const elements = document.querySelectorAll('[data-en], [data-vi]');
+    if (currentLang === 'en') {
+        elements.forEach(el => {
+            if (el.dataset.vi) el.textContent = el.dataset.vi;
+        });
+        this.textContent = 'VN';
+        currentLang = 'vi';
+    } else {
+        elements.forEach(el => {
+            if (el.dataset.en) el.textContent = el.dataset.en;
+        });
+        this.textContent = 'EN';
+        currentLang = 'en';
+    }
+});
+</script>
+</script>
+<button id="scrollToTopBtn" class="scroll-top" aria-label="Scroll to top">
+    <div class="scroll-top-icon">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+    <svg class="progress-ring" width="60" height="60">
+        <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="4" fill="transparent" r="28" cx="30"
+            cy="30"></circle>
+    </svg>
+</button>
+<style>
+    .scroll-top {
+        position: fixed;
+        right: 1.6%;
+        background: linear-gradient(100deg, #1ca6f0, #3c7aff, #05deff);
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        overflow: visible;
+        z-index: 10;
+        bottom: 15px;
+        /* Ensure button is on top */
+    }
+
+    .scroll-top.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .scroll-top:hover {
+        transform: scale(1.1);
+        /* Subtle scaling instead of expanding */
+        box-shadow: 0 8px 20px rgba(255, 69, 159, 0.6);
+        /* Slightly larger shadow */
+    }
+
+    .scroll-top:active {
+        transform: scale(1.05);
+        /* Minor scale reduction on click */
+    }
+
+    .scroll-top-icon {
+        position: relative;
+        z-index: 2;
+        transition: transform 0.3s ease;
+    }
+
+    .scroll-top:hover .scroll-top-icon {
+        transform: translateY(-3px);
+    }
+
+    /* Progress Ring Styling */
+    .progress-ring {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+        /* To start from the top */
+    }
+
+    .progress-ring__circle {
+        transition: stroke-dashoffset 0.35s;
+        transform-origin: 50% 50%;
+    }
+
+    /* Pulse Animation */
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        }
+
+        50% {
+            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.7);
+        }
+
+        100% {
+            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        }
+    }
+
+    .scroll-top:hover {
+        animation: pulse 1.5s infinite;
+    }
+
+    .scroll-top.show {
+        animation: none;
+        /* No animation when showing the button */
+    }
+
+    .scroll-top.show:hover {
+        animation: pulse 1.5s infinite;
+        /* Pulse on hover */
+    }
+</style>
+<script>
+    // Get the button
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    const progressCircle = document.querySelector(".progress-ring__circle");
+    const radius = progressCircle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+
+    // Set the circle progress properties
+    progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+    progressCircle.style.strokeDashoffset = circumference;
+
+    // Function to show or hide the button based on scroll position
+    function toggleScrollButton() {
+        if (window.scrollY > 100) {
+            scrollToTopBtn.classList.add("show");
+        } else {
+            scrollToTopBtn.classList.remove("show");
+        }
+    }
+
+    // Function to set the scroll progress on the button ring
+    function setProgress(percent) {
+        const offset = circumference - (percent / 100) * circumference;
+        progressCircle.style.strokeDashoffset = offset;
+    }
+
+    // Listen for scroll events to update button visibility and progress
+    window.addEventListener("scroll", () => {
+        toggleScrollButton();
+        const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        setProgress(scrollPercent);
+    });
+
+    // Smooth scroll to top when the button is clicked
+    scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+  </script>
+</body>
+
+</html>
