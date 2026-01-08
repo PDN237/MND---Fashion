@@ -32,7 +32,7 @@ This project is ideal for fashion enthusiasts and businesses looking to build a 
 
 ## 🌐 Live Demo
 
-👉 [View Live Demo]([https://pdn237.github.io/MND---Fashion/](https://pdn237.github.io/MND---Fashion/))  
+👉 [View Live Demo]([https://pdn237.github.io/MND---Fashion/])  
 *(Replace `#` with your deployed URL once available.)*
 
 ---
